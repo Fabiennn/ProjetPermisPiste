@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/LearnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/LearnerRepository.java" afterDir="false" />
+    <list default="true" id="5c47f8fd-471a-410d-b206-0274c2363e09" name="Default Changelist" comment="Test Git Avec spring boot">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <list id="5fdca2c1-3bcc-4c96-bf68-eb557a086876" name="Test Git Avec spring boot" comment="">
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -52,10 +60,11 @@
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelOrder2" value="2" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RequestMappingsPanelWidth0" value="905" />
+    <property name="RequestMappingsPanelWidth1" value="904" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjetPermisPiste" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -86,80 +95,69 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="" />
-      <created>1530522319070</created>
+      <changelist id="5c47f8fd-471a-410d-b206-0274c2363e09" name="Default Changelist" comment="" />
+      <changelist id="5fdca2c1-3bcc-4c96-bf68-eb557a086876" name="Test Git Avec spring boot" comment="" />
+      <created>1622563582790</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1530522319070</updated>
-      <workItem from="1530522324116" duration="14039000" />
-      <workItem from="1530692239275" duration="7414000" />
-      <workItem from="1532113385171" duration="3492000" />
-      <workItem from="1532201523897" duration="6071000" />
-      <workItem from="1532269216440" duration="5736000" />
-      <workItem from="1532289991127" duration="34000" />
-      <workItem from="1535883366171" duration="6948000" />
-      <workItem from="1536933646779" duration="10267000" />
-      <workItem from="1537726362439" duration="48000" />
-      <workItem from="1537727179754" duration="2840000" />
-      <workItem from="1537735005265" duration="644000" />
-      <workItem from="1537735723443" duration="52000" />
-      <workItem from="1537736041567" duration="2758000" />
-      <workItem from="1537793352662" duration="341000" />
-      <workItem from="1537794099638" duration="80000" />
-      <workItem from="1537794247456" duration="976000" />
-      <workItem from="1537803118397" duration="2358000" />
-      <workItem from="1537806586606" duration="3461000" />
-      <workItem from="1541356814139" duration="9030000" />
-      <workItem from="1541958362766" duration="7764000" />
-      <workItem from="1542100455422" duration="21582000" />
-      <workItem from="1542218339030" duration="3422000" />
-      <workItem from="1542265140180" duration="19179000" />
-      <workItem from="1543593408074" duration="65000" />
-      <workItem from="1543593713133" duration="71000" />
-      <workItem from="1543598499843" duration="1671000" />
-      <workItem from="1543933600929" duration="11995000" />
-      <workItem from="1545122530154" duration="739000" />
-      <workItem from="1553705838071" duration="627000" />
-      <workItem from="1554121904103" duration="10180000" />
-      <workItem from="1554214910136" duration="7471000" />
-      <workItem from="1554236565452" duration="1199000" />
-      <workItem from="1554302024760" duration="25000" />
-      <workItem from="1555595125932" duration="40000" />
-      <workItem from="1555595181093" duration="865000" />
-      <workItem from="1578989960518" duration="3377000" />
-      <workItem from="1578995389653" duration="102000" />
-      <workItem from="1579549324390" duration="603000" />
-      <workItem from="1582019995110" duration="223000" />
-      <workItem from="1582126655526" duration="494000" />
-      <workItem from="1582129356623" duration="34000" />
-      <workItem from="1582129412182" duration="40000" />
-      <workItem from="1582728791138" duration="1087000" />
-      <workItem from="1585573180541" duration="492000" />
-      <workItem from="1585901591593" duration="10118000" />
-      <workItem from="1600261701243" duration="52000" />
-      <workItem from="1609785346007" duration="3337000" />
-      <workItem from="1609839077500" duration="3168000" />
-      <workItem from="1609872507705" duration="1709000" />
-      <workItem from="1610381147588" duration="715000" />
-      <workItem from="1612028674789" duration="701000" />
-      <workItem from="1612445231493" duration="12000" />
-      <workItem from="1615471654345" duration="229000" />
-      <workItem from="1615830253208" duration="3118000" />
-      <workItem from="1615911956302" duration="171000" />
-      <workItem from="1615917361176" duration="27000" />
-      <workItem from="1615972893122" duration="986000" />
-      <workItem from="1617179684569" duration="1110000" />
-      <workItem from="1617180837255" duration="1917000" />
-      <workItem from="1622047600886" duration="1768000" />
-      <workItem from="1622291315663" duration="4033000" />
-      <workItem from="1622369140035" duration="333000" />
-      <workItem from="1622396975599" duration="1138000" />
-      <workItem from="1622465483785" duration="5543000" />
-      <workItem from="1622542354511" duration="8294000" />
+      <updated>1622563582790</updated>
+      <workItem from="1622563584077" duration="275000" />
+      <workItem from="1622563901911" duration="2746000" />
+      <workItem from="1622575838701" duration="5278000" />
+      <workItem from="1622581322073" duration="1533000" />
+      <workItem from="1622582895650" duration="322000" />
+      <workItem from="1622583239690" duration="1113000" />
+      <workItem from="1622584385856" duration="6216000" />
     </task>
+    <task id="LOCAL-00001" summary="Test Git Avec spring boot">
+      <created>1622590206082</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622590206082</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Test Git Avec spring boot">
+      <created>1622590620072</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622590620072</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test Git Avec spring boot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Git Avec spring boot" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
