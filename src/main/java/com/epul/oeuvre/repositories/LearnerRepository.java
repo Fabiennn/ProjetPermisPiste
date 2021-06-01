@@ -14,5 +14,5 @@ public interface LearnerRepository extends JpaRepository<LearnerEntity, Integer>
     public LearnerEntity rechercheNom(String login);
 
     public List<LearnerEntity> findByRole(String role);
-    
+
 }
