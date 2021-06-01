@@ -13,7 +13,7 @@
 <%@include file="vues/navigation.jsp"%>
 <div class="title ui-corner-left">
 
-    <h1 style="margin-left: auto">Accueil</h1>
+    <h1 style="margin-left: auto">Accueil </h1>
 </div>
 <div class="jumbotron text-center">
     <h2>Bienvenue dans l'application Permis Piste</h2>
