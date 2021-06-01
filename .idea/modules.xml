@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProjetOeuvre.iml" filepath="$PROJECT_DIR$/ProjetOeuvre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/polypist.iml" filepath="$PROJECT_DIR$/polypist.iml" />
     </modules>
   </component>
 </project>
