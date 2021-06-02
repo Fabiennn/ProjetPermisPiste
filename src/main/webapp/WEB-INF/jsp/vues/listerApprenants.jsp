@@ -28,7 +28,7 @@
                     <td>${item.surname}</td>
                     <td>${item.forname}</td>
                     <td>${item.email}</td>
-                    <td><a class="btn btn-info" href="/apprenant/modifierApprenant.htm?id=${item.id}" role="button"><span
+                    <td><a class="btn btn-info" href="/apprenant/modifierApprenant/${item.id}" role="button"><span
                             class="glyphicon glyphicon-pencil"></span> Modifier</a>
                         <a class="btn btn-danger" href="supprimerAdherent.htm?id=${item.id}" role="button"><span
                                 class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
