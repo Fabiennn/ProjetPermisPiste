@@ -71,7 +71,7 @@
                 </div></form>
 
 
-                <li><a href="javascript:window.close();"><span class="glyphicon glyphicon-log-out"></span> Quitter</a>
+                <li><a href="/authentification/logout"><span class="glyphicon glyphicon-log-out"></span> Quitter</a>
                 </li>
             </c:if>
             <c:if test="${sessionScope.role.equals('apprenant')}">

@@ -76,6 +76,13 @@ public class ControllerLogin {
         return new ModelAndView(destinationPage);
     }
 
+    @RequestMapping("/logout")
+    public ModelAndView controlLogout(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        return new ModelAndView("redirect:/authentification/accueil");
+    }
+
 }
 
 
