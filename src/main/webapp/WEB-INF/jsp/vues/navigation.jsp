@@ -5,7 +5,6 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/authentification/accueil" style="color: chartreuse">Permis Piste</a>
         </div>
-        <p class="navbar-text">Gestion de l'exposition 2021</p>
         <ul class="nav navbar-nav">
             <li><a href="/authentification/accueil"> <span class="glyphicon glyphicon-home"></span> Accueil</a></li>
             <c:if test="${sessionScope.id == null }">
@@ -20,7 +19,7 @@
             <c:if test="${sessionScope.id > 0  }">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="glyphicon glyphicon-oil"></span>
                         Missions
                         <span class="caret"></span>
                     </a>
@@ -39,13 +38,37 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/mission/ajoutMissionAdmin"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a>
+                        <li><a href="/apprenant/ajouterApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a>
                         </li>
                         <li><a href="/apprenant/getAllApprenantAdmin"><span class="glyphicon glyphicon-th-list"></span> Lister
                             les apprenants</a>
                         </li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="glyphicon glyphicon-leaf"></span>
+                        Actions
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/apprenant/ajouterApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter une action</a>
+                        </li>
+                        <li><a href="/action/getAllActionsAdmin"><span class="glyphicon glyphicon-th-list"></span> Lister
+                            les actions</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+            <form method="post" action="/apprenant/getApprenantByName" onsubmit="return teste()">
+
+                <div class="nav navbar-nav">
+                    <INPUT type="text" name="nom" value="" id="nom" class="form-control" min="0">
+                    <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-ok"></span>
+                        Rechercher
+                    </button>
+                </div></form>
 
 
                 <li><a href="javascript:window.close();"><span class="glyphicon glyphicon-log-out"></span> Quitter</a>

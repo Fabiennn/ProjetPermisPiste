@@ -5,7 +5,7 @@
 <body>
 <%@include file="navigation.jsp"%>
 <div class="jumbotron text-center">
-    <h1>Liste des missions</h1>
+    <h1>Liste des missions pour l'apprenant choisis</h1>
 </div>
 
 <div class="container">

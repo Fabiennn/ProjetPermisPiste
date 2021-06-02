@@ -6,4 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import javax.persistence.criteria.CriteriaBuilder;
 
 public interface MissionRepository extends JpaRepository<MissionEntity, Integer> {
+
+    public MissionEntity findByWording(String wording);
+
+    public MissionEntity findById(Long id);
 }

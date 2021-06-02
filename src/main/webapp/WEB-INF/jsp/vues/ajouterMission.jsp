@@ -7,6 +7,9 @@
     <H1> Ajout d'une mission </H1>
 </div>
 <form method="post" action="/mission/ajouterUneMission" onsubmit="return teste()">
+    <c:if test="${not empty alerte}">
+        <script>alert("Une mission a déjà ce nom !");
+        </script></c:if>
     <div class="col-md-12 well well-md">
         <h1>Ajouter la mission que vous voulez</h1>
         <div class="row" >

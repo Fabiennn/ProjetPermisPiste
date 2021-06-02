@@ -18,4 +18,8 @@ public interface IApprenantService {
 
     public void modifier(LearnerEntity entity);
 
+    public void inserer(LearnerEntity entity);
+
+    public void supprimer(Long id);
+
 }

@@ -9,14 +9,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/modifierApprenant.jsp" afterDir="false" />
+    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Admin">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_0_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_jasper_8_5_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jdt_ecj_3_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_0_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_0_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_0_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_0_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionMissionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/InscriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ActionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IActionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/ajouterApprenant.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/consulterApprenant.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerActions.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionParApprenant.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/modifierMission.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProjetOeuvre_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ProjetOeuvre_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetOeuvre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetOeuvre.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerApprenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerApprenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/LearnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/LearnerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerMission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerMission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/MissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/MissionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ApprenantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ApprenantService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IApprenantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IApprenantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IMissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IMissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/ajouterAdherent.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/ajouterMission.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/ajouterMission.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/ajouterOeuvre.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerAdherent.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerApprenants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerApprenants.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissions.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +115,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="oeuvre&#10;cerisaie" />
@@ -121,7 +152,7 @@
       <recent name="com.epul.oeuvre.meserreurs" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.ProjetSBootOeuvres">
+  <component name="RunManager" selected="Spring Boot.OeuvreApplication">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -130,6 +161,19 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -399,6 +443,8 @@
       <workItem from="1622396975599" duration="1138000" />
       <workItem from="1622465483785" duration="5543000" />
       <workItem from="1622542354511" duration="15978000" />
+      <workItem from="1622630322294" duration="3174000" />
+      <workItem from="1622639827758" duration="16139000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1622555598897</created>
@@ -407,14 +453,34 @@
       <option name="project" value="LOCAL" />
       <updated>1622555598897</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Admin">
+      <created>1622630478181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622630478181</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin" />
   </component>
 </project>
