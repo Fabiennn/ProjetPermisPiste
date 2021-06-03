@@ -8,7 +8,7 @@
 }
 
 video {
-    filter: blur(10px) brightness(0.6);
+    filter: blur(10px) brightness(0.5);
     width: 125%;
     height: 100vh;
     object-fit: cover;
@@ -87,6 +87,7 @@ main {
     width: 184px;
     height: 60px;
     border: 1px solid transparent;
+    cursor: pointer;
     transition: all 0.4s;
 }
 
@@ -97,10 +98,16 @@ main {
     color: white;
 }
 
-.btn-prmary:hover {
+.btn-primary:hover {
     background-color: white;
     color: var(--primary);
     border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid transparent;
 }
 
 .btn-secondary {
@@ -163,7 +170,7 @@ label{
 }
 
 .input-field:focus-within .animated-label, .non-empty{
-    transform: translateY(0);
+    transform: translateY(0)!important;
     color: var(--primary);
     font-size: 12px;
 }
@@ -255,6 +262,10 @@ label{
         font-size: 20px;
     }
 
+    .animated-label{
+        transform: translateY(26px);
+    }
+
     .input-field:focus-within .animated-label, .non-empty {
         font-size: 16px!important;
     }
@@ -273,6 +284,10 @@ label{
 
     .name{
         grid-template-columns: 145px 145px;
+    }
+
+    .input-error {
+        font-size: 13px;
     }
 
 }

@@ -3,6 +3,7 @@
 <%@include file="header.jsp" %>
 <body>
 <%@include file="navigation.jsp"%>
+<main>
 <div class="jumbotron text-center">
     <H1> Ajout d'une mission </H1>
 </div>
@@ -38,6 +39,8 @@
     </div>
 </form>
 <%@include file="footer.jsp"%>
+</main>
+
 </body>
 
 </html>

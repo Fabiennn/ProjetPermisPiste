@@ -1,7 +1,7 @@
 package com.epul.oeuvre.service;
 
 import com.epul.oeuvre.domains.LearnerEntity;
-import com.epul.oeuvre.domains.LogiParam;
+import com.epul.oeuvre.domains.LoginParam;
 import com.epul.oeuvre.mesExceptions.MonException;
 import com.epul.oeuvre.repositories.LearnerRepository;
 import com.epul.oeuvre.utilitaires.MonMotPassHash;
@@ -19,7 +19,7 @@ public class AuthentificationService implements IAuthentificationService {
     }
 
     @Override
-    public LearnerEntity authentification(LogiParam unUti) throws Exception {
+    public LearnerEntity authentification(LoginParam unUti) throws Exception {
         LearnerEntity unUtilisateur = null;
         String message;
         String login = unUti.getNomUtil();

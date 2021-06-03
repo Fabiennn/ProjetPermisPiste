@@ -101,17 +101,23 @@ public class ControllerApprenant {
     @RequestMapping(method = RequestMethod.POST, value = "/ajouter")
     public ModelAndView ajouterApprenant(HttpServletRequest request,
                                           HttpServletResponse response) throws Exception {
-        request.setAttribute("alerte", "");
         String destinationPage = "";
         try {
             LearnerEntity learnerEntity = new LearnerEntity();
-            if (this.apprenantService.getLearnerSurname(request.getParameter("surname")) != null) {
-                request.setAttribute("alerte", "Deja prit");
-                return this.pageAjout(request, response);
+            String surname = request.getParameter("surname");
+            String forname = request.getParameter("forname");
+            String email = request.getParameter("email");
+            if (this.apprenantService.getLearnerSurname(surname) != null) {
+                request.setAttribute("idError", "Un compte avec cet identifiant existe déjà");
+                request.setAttribute("tab", "sign-up");
+                request.setAttribute("surname", surname);
+                request.setAttribute("email", email);
+                request.setAttribute("forname", forname);
+                return new ModelAndView("forward://authentification/accueil");
             }
-            learnerEntity.setSurname(request.getParameter("surname"));
-            learnerEntity.setForname(request.getParameter("forname"));
-            learnerEntity.setEmail(request.getParameter("email"));
+            learnerEntity.setSurname(surname);
+            learnerEntity.setForname(forname);
+            learnerEntity.setEmail(email);
             learnerEntity.setMdp(request.getParameter("motdepasse"));
             this.apprenantService.inserer(learnerEntity);
         } catch (Exception e) {

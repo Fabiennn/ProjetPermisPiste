@@ -55,7 +55,7 @@
         <p>olyPist</p>
     </div>
     <div class="context">
-        <div id="home" class="active">
+        <div id="home" <c:if test="${tab == null}">class="active"</c:if>>
             <div class="assets">
                 <div class="asset-element">
                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,30 +103,30 @@
                 </button>
             </div>
         </div>
-        <div id="sign-up">
-            <form action="" method="POST">
+        <div id="sign-up" <c:if test="${tab == 'sign-up'}">class="active"</c:if>>
+            <form action="/apprenant/ajouter" method="POST">
                 <div class="form-inputs">
                     <h1 class="title">Inscription</h1>
                     <div class="name">
                         <div class="input-field first-name">
-                            <label for="firstname"><span class="animated-label">Prénom</span>&nbsp;</label>
-                            <input type="text" name="firstname" id="firstname"/>
-                            <p class="input-error"><!-- Ce prénom est invalide -->&nbsp;</p>
+                            <label for="firstname"><span class="animated-label<c:if test="${surname != null}"> non-empty</c:if>">Identifiant</span>&nbsp;</label>
+                            <input type="text" name="surname" id="firstname" value="${surname}"/>
+                            <p class="input-error">${idError}<!-- Ce prénom est invalide -->&nbsp;</p>
                         </div>
                         <div class="input-field last-name">
-                            <label for="lastname"><span class="animated-label">Nom</span>&nbsp;</label>
-                            <input type="text" name="lastname" id="lastname"/>
+                            <label for="lastname"><span class="animated-label<c:if test="${forname != null}"> non-empty</c:if>">Nom</span>&nbsp;</label>
+                            <input type="text" name="forname" id="lastname" value="${forname}"/>
                             <p class="input-error"><!-- Ce nom est invalide -->&nbsp;</p>
                         </div>
                     </div>
-                    <div class="input-field login-signup">
-                        <label for="login-signup"><span class="animated-label">Identifiant</span>&nbsp;</label>
-                        <input type="text" name="login" id="login-signup"/>
+                    <div class="input-field email-signup">
+                        <label for="email-signup"><span class="animated-label<c:if test="${email != null}"> non-empty</c:if>">Email</span>&nbsp;</label>
+                        <input type="text" name="email" id="email-signup" value="${email}"/>
                         <p class="input-error"><!-- Cet login est invalide -->&nbsp;</p>
                     </div>
                     <div class="input-field password">
                         <label for="password-signup"><span class="animated-label">Mot de passe</span>&nbsp;</label>
-                        <input type="password" name="password" id="password-signup" />
+                        <input type="password" name="motdepasse" id="password-signup"/>
                         <p class="input-error"><!-- Ce mot de passe est invalide -->&nbsp;</p>
                     </div>
                     <div class="input-field password-verif">
@@ -135,29 +135,31 @@
                         <p class="input-error"><!-- Les mots de passe ne correspondent pas. -->&nbsp;</p>
                     </div>
                 </div>
+                <input type="hidden" name="sign-up" value="true">
                 <div class="main-action">
-                    <button type="submit" class="btn-primary" name="sign-up">Inscription</button>
+                    <button type="submit" class="btn-primary" >Inscription</button>
                     <button type="button" class="btn-link" onclick="display('sign-in')">Connexion</button>
                 </div>
             </form>
         </div>
-        <div id="sign-in">
-            <form action="/authentification/getLogin" method="POST">
+        <div id="sign-in" <c:if test="${tab == 'sign-in'}">class="active"</c:if>>
+            <form method="POST" action="/authentification/accueil">
                 <h1 class="title">Connexion</h1>
                 <div class="form-inputs form-signin">
                     <div class="input-field login-signin">
-                        <label for="login-signin"><span class="animated-label">Identifiant</span>&nbsp;</label>
-                        <input type="text" name="login" id="login-signin"/>
+                        <label for="login-signin"><span class="animated-label<c:if test="${login != null}"> non-empty</c:if>">Identifiant</span>&nbsp;</label>
+                        <input type="text" name="login" id="login-signin" value="${login}"/>
                         <p class="input-error"><!-- Cet login est invalide -->&nbsp;</p>
                     </div>
                     <div class="input-field password-signin">
                         <label for="password-signin"><span class="animated-label">Mot de passe</span>&nbsp;</label>
                         <input type="password" name="pwd" id="password-signin" />
-                        <p class="input-error"><!-- Ce mot de passe est invalide -->&nbsp;</p>
+                        <p class="input-error">${loginError}<!-- Ce mot de passe est invalide -->&nbsp;</p>
                     </div>
+                    <input type="hidden" name="sign-in" value="true">
                 </div>
                 <div class="main-action">
-                    <button type="submit" class="btn-primary" name="sign-in">Connexion</button>
+                    <button type="submit" class="btn-primary">Connexion</button>
                     <button type="button" class="btn-link" onclick="display('sign-up')">Inscription</button>
                 </div>
             </form>
@@ -165,6 +167,13 @@
     </div>
 </main>
 <script src="<c:url value="/js/home.js" />"></script>
+<script>
+    <c:if test="${tab != null}">
+    if(window.innerWidth <= 600){
+        minimizeBrand();
+    }
+    </c:if>
+</script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 package com.epul.oeuvre.domains;
 
-public class LogiParam {
+public class LoginParam {
     private String nomUtil;
     private String motPasse;
 
