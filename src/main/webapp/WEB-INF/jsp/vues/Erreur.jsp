@@ -4,6 +4,7 @@
 <%@include file="header.jsp" %>
 <body>
 <%@include file="navigation.jsp"%>
+<main>
 <div class="col-md-12 well well-md">
     <center><h1>Gestion des erreurs </h1></center>
 </div>
@@ -22,8 +23,7 @@
         </button>
     </div>
 </div>
-
-
+</main>
 <script>
     function relocate_home()
     {

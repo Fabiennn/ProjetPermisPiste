@@ -15,15 +15,19 @@ function display(name) {
     })
     .fromTo(divToDisplay, { x: 10, opacity: 0 }, { x: 0, opacity: 1 });
   if (previousDiv.id === "home" && window.innerWidth <= 600) {
-    const brand = document.querySelector(".brand");
-    const pSVG = brand.firstElementChild;
-    const olypist = brand.lastElementChild;
-    const timeLine2 = gsap.timeline();
-    timeLine2
+    minimizeBrand()
+  }
+}
+
+function minimizeBrand(){
+  const brand = document.querySelector(".brand");
+  const pSVG = brand.firstElementChild;
+  const olypist = brand.lastElementChild;
+  const timeLine2 = gsap.timeline();
+  timeLine2
       .to(pSVG, { width: "40px", height: "42.41px" }, 0)
       .to(olypist, { x: 0, y: 0 }, 0)
       .to(brand, { x: 0 }, 0);
-  }
 }
 
 document
@@ -48,9 +52,9 @@ document.getElementById("sign-up").onsubmit = (event) => {
   event.preventDefault();
   if (emptyInputs(document.querySelectorAll("#sign-up input"))) return;
   const pC = passwordCheck();
-  /*const email = document.querySelector('#email-signup')*/
-  /*const eC = emailCheck(email)*/
-  if (pC) console.log("submit");
+  const email = document.querySelector('#email-signup')
+  const eC = emailCheck(email)
+  if (pC && eC) event.target.submit();
 };
 
 const password = document.getElementById("password-signup");
@@ -72,7 +76,7 @@ function passwordCheck() {
   return true;
 }
 
-/*function emailCheck(email){
+function emailCheck(email){
     let error = document.querySelector(`.${email.id} > .input-error`);
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!re.test(String(email.value).toLowerCase())){
@@ -80,7 +84,7 @@ function passwordCheck() {
         return false;
     }
     return true;
-}*/
+}
 
 function emptyInputs(inputs) {
   let error = false;
@@ -99,8 +103,7 @@ function emptyInputs(inputs) {
 document.getElementById("sign-in").onsubmit = (event) => {
   event.preventDefault();
   if (emptyInputs(document.querySelectorAll("#sign-in input"))) return;
-  /*const email = document.querySelector('#email-signin')*/
-  /*if(emailCheck(email))*/
-  console.log("submit");
+/*  const email = document.querySelector('#email-signin')
+  if(emailCheck(email))*/
   event.target.submit();
 };

@@ -12,3 +12,5 @@
         </div>
     </div>
 </footer>
+
+<script type="text/javascript" src="<c:url value="/js/navigation.js"/>"></script>

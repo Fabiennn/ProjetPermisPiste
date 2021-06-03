@@ -4,6 +4,7 @@
 <%@include file="header.jsp" %>
 <body>
 <%@include file="navigation.jsp"%>
+<main>
 <div class="jumbotron text-center">
     <h1>Liste des missions pour l'apprenant choisis</h1>
 </div>
@@ -40,6 +41,8 @@
     </form>
 </div>
 <%@include file="footer.jsp"%>
+</main>
+
 </body>
 
 </html>
