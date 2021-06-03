@@ -18,6 +18,8 @@
             <tr>
                 <th class="col-md-1">Id</th>
                 <th class="col-md-2">Formulation</th>
+                <th class="col-md-3">Modifier</th>
+                <th class="col-md-4">Supprimer</th>
             </tr>
 
             <c:forEach items="${mesMissions}" var="item">

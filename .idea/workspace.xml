@@ -9,23 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Admin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/IndicatorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionsParAction.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/modifierAction.jsp" afterDir="false" />
+    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Admin (reste seulement Indicator, et ajouter mission à action)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerMission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerMission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/ActionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/ActionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/ActionMissionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/ActionMissionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionMissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionMissionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ActionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ActionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ApprenantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ApprenantService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IActionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IActionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IMissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IMissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerActions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerActions.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/consulterApprenant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/consulterApprenant.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerApprenants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerApprenants.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionParApprenant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionParApprenant.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissions.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -423,7 +413,7 @@
       <workItem from="1622630322294" duration="3174000" />
       <workItem from="1622639827758" duration="17378000" />
       <workItem from="1622707085480" duration="604000" />
-      <workItem from="1622725215220" duration="17772000" />
+      <workItem from="1622725215220" duration="18556000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1622555598897</created>
@@ -446,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622667472184</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Admin (reste seulement Indicator, et ajouter mission à action)">
+      <created>1622761151272</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1622761151272</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +464,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
     <MESSAGE value="Admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin" />
+    <MESSAGE value="Admin (reste seulement Indicator, et ajouter mission à action)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin (reste seulement Indicator, et ajouter mission à action)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,7 +477,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ActionService.java</url>
-          <line>28</line>
+          <line>33</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
