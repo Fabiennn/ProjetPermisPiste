@@ -1,6 +1,7 @@
 package com.epul.oeuvre.service;
 
 
+import com.epul.oeuvre.domains.ActionMissionEntity;
 import com.epul.oeuvre.domains.MissionEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +23,8 @@ public interface IMissionService {
     public void modifier(MissionEntity missionEntity);
 
     public List<MissionEntity> getMissionParApprenant(Long id);
+
+    public List<ActionMissionEntity> getByFkMission(int fkMission);
+
+    public List<ActionMissionEntity> getByFkAction(int fkAction);
 }

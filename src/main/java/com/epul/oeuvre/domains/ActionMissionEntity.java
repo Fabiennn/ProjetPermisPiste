@@ -7,21 +7,10 @@ import java.util.Objects;
 @Table(name = "action__mission", schema = "projetpermis", catalog = "")
 @IdClass(ActionMissionEntityPK.class)
 public class ActionMissionEntity {
-    private Long id;
     private Integer fkAction;
     private Integer fkMission;
     private ActionEntity actionByFkAction;
     private MissionEntity missionByFkMission;
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @Column(name = "fk_action", nullable = false)

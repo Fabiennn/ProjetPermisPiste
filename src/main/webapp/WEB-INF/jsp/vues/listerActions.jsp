@@ -20,28 +20,27 @@
                 <th class="col-md-3">Score minimum</th>
                 <th class="col-md-4">Consulter Mission</th>
                 <th class="col-md-5">Modifier</th>
-                <th class="col-md-6">Supprimer</th>
+                <th class="col-md-6">Ajouter une mission à cette action</th>
+                <th class="col-md-7">Supprimer</th>
             </tr>
 
             <c:forEach items="${mesActions}" var="item">
                 <tr>
+                    <c:if test="${item.id != 20}">
                     <td>${item.id}</td>
                     <td>${item.wording}</td>
                     <td>${item.scoreMinimum}</td>
-                    <c:if test="${not empty item.fkAction}">
-                    <td><a class="btn btn-info" href="/mission/modifierMission/${item.id}" role="button"><span
+                    <td><a class="btn btn-info" href="/action/consulterMission/${item.id}" role="button"><span
                             class="glyphicon glyphicon-pencil"></span> Consulter Mission</a>
                     </td>
-                    </c:if>
-                    <c:if test="${empty item.fkAction}">
-                        <td><input type="hidden" class="btn btn-info" href="/mission/modifierMission/${item.id}" role="button"></input>
-                        </td>
-                    </c:if>
-                    <td><a class="btn btn-info" href="/mission/modifierMission/${item.id}" role="button"><span
-                            class="glyphicon glyphicon-pencil"></span> Modifier</a>
+                    <td><a class="btn btn-info" href="/action/modifierAction/${item.id}" role="button"><span
+                            class="glyphicon glyphicon-share-alt"></span> Modifier</a>
                     </td>
-                        <td><a class="btn btn-danger" href="/mission/supprimerMission/${item.id}" role="button"><span
+                        <td><a class="btn btn-info" href="/action/ajouterMissionAAction/${item.id}" role="button"><span
+                                class="glyphicon glyphicon-eye-open"></span> Ajouter une mission à cette action</a></td>
+                        <td><a class="btn btn-danger" href="/action/supprimerAction/${item.id}" role="button"><span
                                 class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
+                    </c:if>
                 </tr>
             </c:forEach>
         </table>

@@ -49,7 +49,7 @@ public class ActionEntity {
     }
 
     @Basic
-    @Column(name = "scoreMinimum", nullable = true)
+    @Column(name = "score_minimum", nullable = true)
     public Integer getScoreMinimum() {
         return scoreMinimum;
     }

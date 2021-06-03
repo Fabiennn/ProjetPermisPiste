@@ -100,11 +100,11 @@ public class ControllerMission {
 
         request.setAttribute("alerte", "");
         MissionEntity missionEntity = missionService.findById(Long.valueOf(request.getParameter("id")));
-        if (!missionEntity.getWording().equals(request.getParameter("surname")) && missionService.getByWording(request.getParameter("wording")) == null) {
+        if (missionEntity.getWording().equals(request.getParameter("wording")) || missionService.getByWording(request.getParameter("wording")) == null) {
             missionEntity.setWording(request.getParameter("wording"));
             missionService.modifier(missionEntity);
         } else {
-            request.setAttribute("alerte", "Nom d'utilisateur déjà prit");
+            request.setAttribute("alerte", "Nom de mission déjà prit");
             return this.pageModifierMission(Long.valueOf(request.getParameter("id")), request, response);
         }
         return this.pageMissions(request, response);
