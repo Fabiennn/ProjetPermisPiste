@@ -1,0 +1,138 @@
+
+.navbar2{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+.navbar2 p{
+    margin: 0;
+}
+
+.navbar-min{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar2-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 30px 0;
+    transform: translateX(-100%);
+    z-index: 100;
+    background-color: #252539;
+    transition: transform 0.5s;
+}
+
+.navbar2-nav.active{
+    transform: translateX(0);
+}
+
+
+.brand{
+    display: none;
+}
+
+.brand p {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: white;
+    margin-left: 3px;
+}
+
+.identity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.identity > .name{
+    font-size: 30px;
+    color: #00ADEF;
+}
+
+.identity-sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #A9A9A9;
+}
+
+.nav-section{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-section-title{
+    color: #006c91;
+    padding-left: 15px;
+}
+
+.nav-link{
+    display: flex;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px/50%;
+    color: white!important;
+    font-size: 18px;
+    text-decoration: none!important;
+    width: 100%;
+    transition: background-color 0.1s;
+    align-items: center;
+}
+
+.nav-link:hover, .nav-link.active{
+    background-color: #585888;
+}
+
+.nav-icon{
+    margin-right: 10px;
+}
+
+.drop-title:after{
+    content: '>';
+    position: absolute;
+    right: 30px;
+}
+
+.drop-downs{
+    height: 0;
+    padding-left: 15px;
+    overflow: hidden;
+    transition: height 0.6s;
+}
+
+
+@media (min-width: 900px) {
+    body{
+        display: flex;
+    }
+
+    .navbar-min{
+        width: 300px;
+        opacity: 0;
+    }
+
+    .navbar2-nav{
+        position: fixed;
+        transform: none;
+    }
+
+    .brand{
+        display: flex;
+        align-self: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+}
