@@ -20,9 +20,11 @@
                 <th class="col-md-2">Formulation</th>
                 <th class="col-md-3">Score minimum</th>
                 <th class="col-md-4">Consulter Mission</th>
+                <c:if test="${sessionScope.role.equals('admin')}">
                 <th class="col-md-5">Modifier</th>
                 <th class="col-md-6">Ajouter une mission à cette action</th>
                 <th class="col-md-7">Supprimer</th>
+                </c:if>
             </tr>
 
             <c:forEach items="${mesActions}" var="item">
@@ -34,6 +36,7 @@
                     <td><a class="btn btn-info" href="/action/consulterMission/${item.id}" role="button"><span
                             class="glyphicon glyphicon-pencil"></span> Consulter Mission</a>
                     </td>
+                    <c:if test="${sessionScope.role.equals('admin')}">
                     <td><a class="btn btn-info" href="/action/modifierAction/${item.id}" role="button"><span
                             class="glyphicon glyphicon-share-alt"></span> Modifier</a>
                     </td>
@@ -42,6 +45,8 @@
                         <td><a class="btn btn-danger" href="/action/supprimerAction/${item.id}" role="button"><span
                                 class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
                     </c:if>
+                    </c:if>
+                </tr>
                 </tr>
             </c:forEach>
         </table>

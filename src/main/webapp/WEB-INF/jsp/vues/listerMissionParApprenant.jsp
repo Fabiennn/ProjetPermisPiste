@@ -18,18 +18,22 @@
             <tr>
                 <th class="col-md-1">Id</th>
                 <th class="col-md-2">Formulation</th>
+                <c:if test="${sessionScope.role.equals('admin')}">
                 <th class="col-md-3">Modifier</th>
                 <th class="col-md-4">Supprimer</th>
+                </c:if>
             </tr>
 
             <c:forEach items="${mesMissions}" var="item">
                 <tr>
                     <td>${item.id}</td>
                     <td>${item.wording}</td>
+                    <c:if test="${sessionScope.role.equals('admin')}">
                     <td><a class="btn btn-info" href="/mission/modifierMission/${item.id}" role="button"><span
                             class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
                         <td><a class="btn btn-danger" href="/mission/supprimerMission/${item.id}" role="button"><span
                                 class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
+                    </c:if>
                 </tr>
             </c:forEach>
         </table>

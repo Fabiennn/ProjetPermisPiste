@@ -22,8 +22,6 @@ public class ControllerMission {
     @Autowired
     private MissionService missionService;
 
-
-
     @RequestMapping("/getAllMissionAdmin")
     public ModelAndView pageMissions(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String destinationPage = "";

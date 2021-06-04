@@ -22,8 +22,10 @@
                 <th class="col-md-2">Prénom</th>
                 <th class="col-md-4">E-mail</th>
                 <th class="col-md-5">Mission</th>
+                <c:if test="${sessionScope.role.equals('admin')}">
                 <th class="col-md-6">Modifier</th>
                 <th class="col-md-7">Supprimer</th>
+                </c:if>
 
             </tr>
 
@@ -34,10 +36,12 @@
                     <td>${monApprenant.email}</td>
                     <td><a class="btn btn-info" href="/mission/consulterMissionApprenant/${item.id}" role="button"><span
                             class="glyphicon glyphicon-briefcase"></span> Missions</a></td>
+                        <c:if test="${sessionScope.role.equals('admin')}">
                         <td><a class="btn btn-info" href="/apprenant/modifierApprenant/${item.id}" role="button"><span
                                 class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
                         <td><a class="btn btn-danger" href="/apprenant/supprimerApprenant/${item.id}" role="button"><span
                                 class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
+                        </c:if>
                 </tr>
         </table>
     </div>

@@ -3,6 +3,7 @@ package com.epul.oeuvre.domains;
 public class LoginParam {
     private String nomUtil;
     private String motPasse;
+    private boolean admin;
 
     public String getMotPasse() {
         return motPasse;
@@ -16,6 +17,9 @@ public class LoginParam {
         this.motPasse = motPasse;
     }
 
+    public void setPermission(boolean admin) { this.admin = admin; }
+
+    public boolean getPermission() { return this.admin; }
 
     public String getNomUtil() {
         return nomUtil;
