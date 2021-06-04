@@ -33,7 +33,10 @@ public class ControllerLogin {
 
     @RequestMapping(value = "/accueil", method = RequestMethod.GET)
     public ModelAndView pageIndex(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        return new ModelAndView("vues/home");
+        HttpSession session = request.getSession();
+        if(session.getId()==null)
+            return new ModelAndView("vues/home");
+        return new ModelAndView("index");
     }
 
     ///
@@ -61,6 +64,9 @@ public class ControllerLogin {
                 } else session.setAttribute("role", "apprenant");
                 session = request.getSession();
                 session.setAttribute("id", unUtilisateur.getId());
+                session.setAttribute("username", unUtilisateur.getForname());
+                session.setAttribute("email", unUtilisateur.getEmail());
+                session.setAttribute("login", unUtilisateur.getSurname());
                 destinationPage = "/index";
             } else {
                 message = "Identifiant ou mot de passe erroné";

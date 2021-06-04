@@ -2,6 +2,7 @@
 function toggleDropDown(event){
     const button = event.target;
     const subMenu = button.nextElementSibling;
+    button.classList.toggle("active");
     subMenu.classList.toggle("active");
     console.log(subMenu.classList.contains('active'))
     if(subMenu.classList.contains('active')){
@@ -18,4 +19,5 @@ document.querySelectorAll(".drop-title").forEach(button => {
 
 function toggleNavBar(){
     document.querySelector(".navbar2-nav").classList.toggle('active');
+    document.querySelector(".navbar-min .nav-btn").classList.toggle('active');
 }
