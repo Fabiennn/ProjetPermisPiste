@@ -4,7 +4,6 @@
 <%@include file="header.jsp" %>
 <body>
 <%@include file="navigation.jsp"%>
-<main>
 <div class="jumbotron text-center">
     <h1>Liste des missions pour l'apprenant choisis</h1>
 </div>
@@ -13,13 +12,14 @@
     <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
     <h2>Tableau des Missions</h2>
     <div class="container">
-        <h3>Liste des Missions</h3>
+        <h3>Liste des Missions pour l'action choisis</h3>
         <table class="table table-hover">
             <tr>
                 <th class="col-md-1">Id</th>
                 <th class="col-md-2">Formulation</th>
-                <th class="col-md-3">Modifier</th>
-                <th class="col-md-4">Supprimer</th>
+                <th class="col-md-3">Modifier la mission</th>
+                <th class="col-md-4">Supprimer la mission de cette action</th>
+                <th class="col-md-5">Supprimer la mission</th>
             </tr>
 
             <c:forEach items="${mesMissions}" var="item">
@@ -28,8 +28,10 @@
                     <td>${item.wording}</td>
                     <td><a class="btn btn-info" href="/mission/modifierMission/${item.id}" role="button"><span
                             class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
-                        <td><a class="btn btn-danger" href="/mission/supprimerMission/${item.id}" role="button"><span
-                                class="glyphicon glyphicon-remove-circle"></span> Supprimer</a></td>
+                    <td><a class="btn btn-danger" href="/action/supprimerMission/${item.id}" role="button"><span
+                            class="glyphicon glyphicon-remove-circle"></span> Supprimer la mission de cette action</a></td>
+                    <td><a class="btn btn-danger" href="/mission/supprimerMission/${item.id}" role="button"><span
+                            class="glyphicon glyphicon-remove-circle"></span> Supprimer la mission</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -43,8 +45,6 @@
     </form>
 </div>
 <%@include file="footer.jsp"%>
-</main>
-
 </body>
 
 </html>

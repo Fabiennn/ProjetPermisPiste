@@ -13,4 +13,5 @@ public interface ActionRepository extends JpaRepository<ActionEntity, Integer> {
     public ActionEntity findByWording(String wording);
 
     public List<ActionEntity> findByFkAction(int fkAction);
+
 }

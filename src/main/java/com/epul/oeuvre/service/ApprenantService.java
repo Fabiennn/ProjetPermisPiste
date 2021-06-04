@@ -54,8 +54,6 @@ public class ApprenantService implements IApprenantService{
     @Override
     public void inserer(LearnerEntity entity) {
         try {
-        int id = this.getTousLesApprenants().size();
-        entity.setId(Long.valueOf(id) + 10);
         entity.setSalt(MonMotPassHash.bytesToString(MonMotPassHash.GenerateSalt()));
         byte[] salt = MonMotPassHash.transformeEnBytes(entity.getSalt());
         char[] pwd_char = MonMotPassHash.converttoCharArray(entity.getMdp());

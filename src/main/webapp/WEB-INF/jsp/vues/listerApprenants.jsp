@@ -21,6 +21,9 @@
                 <th class="col-md-2">Nom</th>
                 <th class="col-md-2">Prénom</th>
                 <th class="col-md-4">E-mail</th>
+                <th class="col-md-5">Mission</th>
+                <th class="col-md-6">Modifier</th>
+                <th class="col-md-7">Supprimer</th>
 
             </tr>
 

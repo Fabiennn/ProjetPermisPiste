@@ -1,8 +1,11 @@
 package com.epul.oeuvre.service;
 
+import com.epul.oeuvre.domains.ActionMissionEntity;
+import com.epul.oeuvre.domains.ActionMissionEntityPK;
 import com.epul.oeuvre.domains.InscriptionEntity;
 import com.epul.oeuvre.domains.MissionEntity;
 import com.epul.oeuvre.mesExceptions.MonException;
+import com.epul.oeuvre.repositories.ActionMissionRepository;
 import com.epul.oeuvre.repositories.InscriptionRepository;
 import com.epul.oeuvre.repositories.MissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ public class MissionService implements IMissionService {
     @Autowired
     private InscriptionRepository inscriptionRepository;
 
+    @Autowired
+    private ActionMissionRepository actionMissionRepository;
+
     @Override
     public List<MissionEntity> getToutesLesMissions() {
         List<MissionEntity> mesMissions = new ArrayList<>();
@@ -36,11 +42,6 @@ public class MissionService implements IMissionService {
     @Override
     public void inserer(MissionEntity missionEntity) {
         try {
-
-            List<MissionEntity> missionEntities = new ArrayList<>();
-            missionEntities = getToutesLesMissions();
-            Long id = Long.valueOf(missionEntities.size() + 1);
-            missionEntity.setId(id);
             this.missionRepository.save(missionEntity);
         } catch (Exception e) {
             throw new MonException("Insert", "Sql", e.getMessage());
@@ -49,6 +50,10 @@ public class MissionService implements IMissionService {
 
     @Override
     public void supprimer(MissionEntity missionEntity) {
+        List<ActionMissionEntity> actionMissionEntities = this.actionMissionRepository.getActionMissionEntitiesByFkMission(Math.toIntExact(missionEntity.getId()));
+        for (ActionMissionEntity actionMissionEntity : actionMissionEntities) {
+            this.actionMissionRepository.delete(actionMissionEntity);
+        }
         this.missionRepository.delete(missionEntity);
     }
 
@@ -75,6 +80,16 @@ public class MissionService implements IMissionService {
     @Override
     public MissionEntity getByWording(String wording) {
         return this.missionRepository.findByWording(wording);
+    }
+
+    @Override
+    public List<ActionMissionEntity> getByFkMission(int fkMission) {
+        return this.actionMissionRepository.getActionMissionEntitiesByFkMission(fkMission);
+    }
+
+    @Override
+    public List<ActionMissionEntity> getByFkAction(int fkAction) {
+        return this.actionMissionRepository.findByFkAction(fkAction);
     }
 }
 
