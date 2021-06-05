@@ -94,10 +94,10 @@
     color: #00ADEF;
 }
 
-.identity > a{
+.logout-link{
     position: absolute;
-    top: 17px;
-    right: 30px;
+    top: 7px;
+    right: 15px;
 }
 
 .identity-sub{
@@ -203,5 +203,9 @@
         align-self: center;
         align-items: center;
         margin-bottom: 30px;
+    }
+
+    .logout-link{
+        top: 41px;
     }
 }
