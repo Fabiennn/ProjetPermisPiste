@@ -1,9 +1,6 @@
 package com.epul.oeuvre.service;
 
-import com.epul.oeuvre.domains.ActionMissionEntity;
-import com.epul.oeuvre.domains.ActionMissionEntityPK;
-import com.epul.oeuvre.domains.InscriptionEntity;
-import com.epul.oeuvre.domains.MissionEntity;
+import com.epul.oeuvre.domains.*;
 import com.epul.oeuvre.mesExceptions.MonException;
 import com.epul.oeuvre.repositories.ActionMissionRepository;
 import com.epul.oeuvre.repositories.InscriptionRepository;
@@ -11,8 +8,7 @@ import com.epul.oeuvre.repositories.MissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class MissionService implements IMissionService {
@@ -26,6 +22,7 @@ public class MissionService implements IMissionService {
 
     @Autowired
     private ActionMissionRepository actionMissionRepository;
+
 
     @Override
     public List<MissionEntity> getToutesLesMissions() {
@@ -67,6 +64,7 @@ public class MissionService implements IMissionService {
         this.missionRepository.save(missionEntity);
     }
 
+
     @Override
     public List<MissionEntity> getMissionParApprenant(Long id) {
         List<MissionEntity> missionEntities = new ArrayList<>();
@@ -90,6 +88,29 @@ public class MissionService implements IMissionService {
     @Override
     public List<ActionMissionEntity> getByFkAction(int fkAction) {
         return this.actionMissionRepository.findByFkAction(fkAction);
+    }
+
+    @Override
+    public Map<InscriptionEntity, List<InscriptionActionEntity>> getinscriptionActionForMissionByApprenant(Long fkLearner){
+        Map<InscriptionEntity, List<InscriptionActionEntity>> inscriptionActionByMission = new HashMap<>();
+        List<InscriptionEntity> inscriptionEntityList = inscriptionRepository.findByFkLearner(fkLearner.intValue());
+        inscriptionEntityList.forEach(inscriptionEntity -> {
+            List<InscriptionActionEntity> inscriptionActionEntities = (List<InscriptionActionEntity>) inscriptionEntity.getInscriptionActionsById();
+            if(inscriptionActionEntities.size() == 0) return;
+            inscriptionActionByMission.put(inscriptionEntity, inscriptionActionEntities);
+        });
+        return inscriptionActionByMission;
+    }
+
+    @Override
+    public List<InscriptionEntity> getMissionsNotMade(Long fkLearner){
+        List<InscriptionEntity> inscriptionEntityList = inscriptionRepository.findByFkLearner(fkLearner.intValue());
+        List<InscriptionEntity> missionNotMade = new ArrayList<>();
+        inscriptionEntityList.forEach(inscriptionEntity -> {
+            List<InscriptionActionEntity> inscriptionActionEntities = (List<InscriptionActionEntity>) inscriptionEntity.getInscriptionActionsById();
+            if(inscriptionActionEntities.size() == 0) missionNotMade.add(inscriptionEntity);
+        });
+        return missionNotMade;
     }
 }
 
