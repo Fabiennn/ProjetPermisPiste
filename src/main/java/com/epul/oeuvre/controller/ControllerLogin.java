@@ -62,7 +62,6 @@ public class ControllerLogin {
                 if (unUtilisateur.getRole().equals("admin")) {
                     session.setAttribute("role", "admin");
                 } else session.setAttribute("role", "apprenant");
-                session = request.getSession();
                 session.setAttribute("id", unUtilisateur.getId());
                 session.setAttribute("username", unUtilisateur.getForname());
                 session.setAttribute("email", unUtilisateur.getEmail());

@@ -37,11 +37,11 @@
                     <td>${item.email}</td>
                     <td><a class="btn btn-info" href="/mission/consulterMissionApprenant/${item.id}" role="button"><span
                             class="glyphicon glyphicon-briefcase"></span> Missions</a></td>
-                        <c:if test="${sessionScope.id.equals(item.id)}">
+                        <c:if test="${sessionScope.id.equals(item.id) || sessionScope.role.equals('admin')}">
                         <td><a class="btn btn-info" href="/apprenant/modifierApprenant/${item.id}" role="button"><span
                                 class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
                         </c:if>
-                        <c:if test="${!sessionScope.id.equals(item.id)}">
+                        <c:if test="${!sessionScope.id.equals(item.id) && !sessionScope.role.equals('admin')}">
                             <td><button class="btn btn-secondary btn-lg" disabled><span
                                     class="glyphicon glyphicon-pencil"></span> Modifier</button></td>
                         </c:if>

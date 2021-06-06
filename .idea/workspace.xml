@@ -9,19 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Admin (reste seulement Indicator, et ajouter mission à action)">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Front">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerMission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerMission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/LoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/LoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/consulterApprenant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/consulterApprenant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerActions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerActions.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerApprenants.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerApprenants.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionParApprenant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionParApprenant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissions.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionsParAction.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionsParAction.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,17 +135,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -430,6 +410,9 @@
       <workItem from="1622725215220" duration="18556000" />
       <workItem from="1622797945581" duration="1105000" />
       <workItem from="1622799097913" duration="6887000" />
+      <workItem from="1622841390585" duration="761000" />
+      <workItem from="1622881006037" duration="3000" />
+      <workItem from="1622913563182" duration="3289000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1622555598897</created>
@@ -490,6 +473,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java</url>
           <line>52</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerLogin.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
