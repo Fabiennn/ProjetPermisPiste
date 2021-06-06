@@ -15,5 +15,7 @@ public interface IActionService {
 
     public void modifier(ActionEntity actionEntity);
 
+    public void inserer (int idAction, int idMission);
+
 
 }

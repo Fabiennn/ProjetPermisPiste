@@ -69,4 +69,14 @@ public class ActionService implements IActionService {
         this.actionRepository.save(actionEntity);
     }
 
+    @Override
+    public void inserer (int idAction, int idMission) {
+
+        ActionMissionEntity actionMissionEntity = new ActionMissionEntity();
+        actionMissionEntity.setFkAction(idAction);
+        actionMissionEntity.setFkMission(idMission);
+        this.actionMissionRepository.save(actionMissionEntity);
+
+    }
+
 }

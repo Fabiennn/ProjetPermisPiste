@@ -1,5 +1,6 @@
 package com.epul.oeuvre.repositories;
 
+import com.epul.oeuvre.domains.ActionEntity;
 import com.epul.oeuvre.domains.ActionMissionEntity;
 import org.hibernate.persister.entity.SingleTableEntityPersister;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,4 +16,6 @@ public interface ActionMissionRepository extends JpaRepository<ActionMissionEnti
     public List<ActionMissionEntity> findByFkAction(int fkAction);
 
     public List<ActionMissionEntity> getActionMissionEntitiesByFkMission(int fkMission);
+
+    public ActionMissionEntity findByFkActionAndFkMission(int fkAction, int fkMission);
 }

@@ -31,7 +31,7 @@
                     <c:if test="${sessionScope.role.equals('admin')}">
                     <td><a class="btn btn-info" href="/mission/modifierMission/${item.id}" role="button"><span
                             class="glyphicon glyphicon-pencil"></span> Modifier</a></td>
-                    <td><a class="btn btn-danger" href="/action/supprimerMission/${item.id}" role="button"><span
+                    <td><a class="btn btn-danger" href="/action/supprimerMissionAction/${item.id}/${monAction.id}" role="button"><span
                             class="glyphicon glyphicon-remove-circle"></span> Supprimer la mission de cette action</a></td>
                     <td><a class="btn btn-danger" href="/mission/supprimerMission/${item.id}" role="button"><span
                             class="glyphicon glyphicon-remove-circle"></span> Supprimer la mission</a></td>

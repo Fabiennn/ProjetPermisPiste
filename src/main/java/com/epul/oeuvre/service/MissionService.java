@@ -112,5 +112,12 @@ public class MissionService implements IMissionService {
         });
         return missionNotMade;
     }
+
+    @Override
+    public void supprimerActionMission(int idAction, int idMission) {
+
+        this.actionMissionRepository.delete(this.actionMissionRepository.findByFkActionAndFkMission(idAction, idMission));
+
+    }
 }
 

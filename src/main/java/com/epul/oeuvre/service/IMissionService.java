@@ -34,4 +34,6 @@ public interface IMissionService {
     Map<InscriptionEntity, List<InscriptionActionEntity>> getinscriptionActionForMissionByApprenant(Long fkLearner);
 
     List<InscriptionEntity> getMissionsNotMade(Long fkLearner);
+
+    public void supprimerActionMission(int idAction, int idMission);
 }

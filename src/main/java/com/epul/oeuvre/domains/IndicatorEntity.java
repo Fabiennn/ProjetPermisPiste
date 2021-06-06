@@ -46,7 +46,7 @@ public class IndicatorEntity {
     }
 
     @Basic
-    @Column(name = "valueIfCheck", nullable = true)
+    @Column(name = "value_if_Check", nullable = true)
     public Integer getValueIfCheck() {
         return valueIfCheck;
     }
@@ -56,7 +56,7 @@ public class IndicatorEntity {
     }
 
     @Basic
-    @Column(name = "valueIfUnCheck", nullable = true)
+    @Column(name = "value_if_uncheck", nullable = true)
     public Integer getValueIfUnCheck() {
         return valueIfUnCheck;
     }
