@@ -100,10 +100,10 @@ public class ControllerMission {
         request.setAttribute("mesMissions", missionEntities);*/
         LearnerEntity learner = apprenantRepository.getOne(id);
         request.setAttribute("apprenant", learner);
-        Map<InscriptionEntity, List<InscriptionActionEntity>> inscriptionActionByMissionMap = this.missionService.getinscriptionActionForMissionByApprenant(id);
-        request.setAttribute("mesMissions", inscriptionActionByMissionMap);
-        List<InscriptionEntity> missionsNotMade = this.missionService.getMissionsNotMade(id);
-        request.setAttribute("mesMissionNonEffectues", missionsNotMade);
+        List<InscriptionEntity> inscriptionMade = inscriptionRepository.getPreviousInscriptionsOfLearner(id.intValue());
+        request.setAttribute("mesInscription", inscriptionMade);
+        List<InscriptionEntity> inscriptionNotMade = inscriptionRepository.getNextInscriptionsOfLearner(id.intValue());
+        request.setAttribute("mesMissionNonEffectues", inscriptionNotMade);
         request.setAttribute("allMissions", missionService.getToutesLesMissions());
         return new ModelAndView("/vues/listerMissionParApprenant");
 

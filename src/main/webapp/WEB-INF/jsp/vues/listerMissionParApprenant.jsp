@@ -33,9 +33,12 @@
                 <p>Nb Actions</p>
             </div>
 
-            <c:forEach items="${mesMissions}" var="entry">
-                ${mission = entry.key.missionByFkMission ; ''}
-                ${actions = entry.value; ''}
+            <c:forEach items="${mesInscription}" var="inscription">
+                ${inscription}
+                ${inscription.missionByFkMission}
+                ${mission = inscription.missionByFkMission ; ''}
+                ${actions = inscription.inscriptionActionsById ; ''}
+                ${actions}
             <div class="mission-container">
                 <div class="missions-grid mission-grid-body">
                     <p>${mission.id}</p>

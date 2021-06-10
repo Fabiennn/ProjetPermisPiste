@@ -27,5 +27,5 @@
         }
     </script>
     <meta charset="UTF-8">
-    <title>${title}</title>
+    <title>${param.title}</title>
 </head>
