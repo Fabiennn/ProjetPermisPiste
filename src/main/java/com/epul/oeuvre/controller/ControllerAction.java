@@ -38,6 +38,32 @@ public class ControllerAction {
         return new ModelAndView("vues/listerActions");
     }
 
+    @RequestMapping("/inscrireMissionAction")
+    public ModelAndView inscrireMissionAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        this.actionService.inserer(Integer.valueOf(request.getParameter("idAction")), Integer.valueOf(request.getParameter("idMission")));
+
+        return this.pageActions(request, response);
+    }
+
+    @GetMapping("/ajouterMissionAAction/{id}")
+    public ModelAndView pageAjouterMissions(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+
+        ActionEntity actionEntity = this.actionService.findById(id);
+        List<ActionMissionEntity> actionMissionEntities = this.missionService.getByFkAction(Math.toIntExact(actionEntity.getId()));
+        List<MissionEntity> missionEntities = this.missionService.getToutesLesMissions();
+
+        for (ActionMissionEntity actionMissionEntity : actionMissionEntities) {
+            missionEntities.remove(actionMissionEntity.getMissionByFkMission());
+        }
+
+
+        request.setAttribute("action", actionEntity);
+        request.setAttribute("allMissions", missionEntities);
+        return new ModelAndView("vues/ajouterMissionAction");
+
+    }
     @GetMapping("/supprimerAction/{id}")
     public ModelAndView supprimerAction(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -54,6 +80,14 @@ public class ControllerAction {
         return new ModelAndView("vues/modifierAction");
     }
 
+    @GetMapping("/supprimerMissionAction/{id}/{idAction}")
+    public ModelAndView supprimerMissionAction(@PathVariable(value = "id") Long id, @PathVariable(value = "idAction") Long idAction, HttpServletRequest request,
+                                               HttpServletResponse response) throws Exception {
+
+        this.missionService.supprimerActionMission(Math.toIntExact(idAction), Math.toIntExact(id));
+        return this.pageActions(request, response);
+    }
+
     @GetMapping("/consulterMission/{id}")
     public ModelAndView pageConsulterMission(@PathVariable(value = "id") Long id, HttpServletRequest request,
                                              HttpServletResponse response) throws Exception {
@@ -64,6 +98,7 @@ public class ControllerAction {
         for (ActionMissionEntity actionMissionEntity : actionMissionEntities) {
             missionEntities.add(this.missionService.findById(Long.valueOf(actionMissionEntity.getFkMission())));
         }
+        request.setAttribute("monAction", actionEntity);
         request.setAttribute("mesMissions", missionEntities);
         return new ModelAndView("/vues/listerMissionsParAction");
     }
