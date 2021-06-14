@@ -194,99 +194,27 @@
                     </div>
                 </div>
             </div>
+            <div class="nav-dropdown">
+                <button type="button" class="nav-link drop-title">
+                    <span class="nav-icon">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.2169 21.9499H14.1438C13.8758 21.9337 13.6207 21.8294 13.4181 21.6533C13.2155 21.4771 13.0768 21.2389 13.0235 20.9757L10.9656 10.9906L0.98049 8.93267C0.716822 8.88031 0.477893 8.74216 0.300958 8.53979C0.124024 8.33741 0.0190297 8.08217 0.00234784 7.81387C-0.014334 7.54557 0.0582341 7.27929 0.208737 7.05655C0.359239 6.83381 0.579216 6.66714 0.834366 6.58251L20.3176 0.0921736C20.5363 0.00187268 20.7765 -0.0227598 21.009 0.0212873C21.2415 0.0653345 21.4561 0.176153 21.6266 0.340198C21.7971 0.504242 21.9161 0.714406 21.9691 0.945002C22.0221 1.1756 22.0067 1.41663 21.9249 1.63865L15.4346 21.1218C15.3499 21.3739 15.185 21.5913 14.9651 21.7408C14.7452 21.8903 14.4824 21.9637 14.2169 21.9499ZM5.93653 7.45926L12.2564 8.75002C12.4926 8.79559 12.7101 8.91012 12.8813 9.07917C13.0525 9.24821 13.1698 9.46418 13.2184 9.69982L14.497 16.0197L18.7833 3.17295L5.93653 7.45926Z" fill="white"/>
+                        </svg>
+                    </span>
+                    Indicateurs
+                </button>
+                <div class="drop-downs">
+                    <div class="drop-downs-wrapper">
+                        <a href="/indicator/getAllIndicator" class="drop-item nav-link">
+                            <span class="nav-icon">
+                                <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.3882 0.529412H5.92941C5.81294 0.529412 5.71765 0.624706 5.71765 0.741176V2.22353C5.71765 2.34 5.81294 2.43529 5.92941 2.43529H21.3882C21.5047 2.43529 21.6 2.34 21.6 2.22353V0.741176C21.6 0.624706 21.5047 0.529412 21.3882 0.529412ZM21.3882 8.04706H5.92941C5.81294 8.04706 5.71765 8.14235 5.71765 8.25882V9.74118C5.71765 9.85765 5.81294 9.95294 5.92941 9.95294H21.3882C21.5047 9.95294 21.6 9.85765 21.6 9.74118V8.25882C21.6 8.14235 21.5047 8.04706 21.3882 8.04706ZM21.3882 15.5647H5.92941C5.81294 15.5647 5.71765 15.66 5.71765 15.7765V17.2588C5.71765 17.3753 5.81294 17.4706 5.92941 17.4706H21.3882C21.5047 17.4706 21.6 17.3753 21.6 17.2588V15.7765C21.6 15.66 21.5047 15.5647 21.3882 15.5647ZM0 1.48235C-2.90074e-09 1.67702 0.0383423 1.86978 0.112837 2.04962C0.187333 2.22947 0.296522 2.39289 0.434171 2.53054C0.57182 2.66818 0.735234 2.77737 0.915081 2.85187C1.09493 2.92636 1.28769 2.96471 1.48235 2.96471C1.67702 2.96471 1.86978 2.92636 2.04962 2.85187C2.22947 2.77737 2.39289 2.66818 2.53053 2.53054C2.66818 2.39289 2.77737 2.22947 2.85187 2.04962C2.92636 1.86978 2.96471 1.67702 2.96471 1.48235C2.96471 1.28769 2.92636 1.09493 2.85187 0.915081C2.77737 0.735234 2.66818 0.57182 2.53053 0.434171C2.39289 0.296522 2.22947 0.187332 2.04962 0.112837C1.86978 0.0383421 1.67702 0 1.48235 0C1.28769 0 1.09493 0.0383421 0.915081 0.112837C0.735234 0.187332 0.57182 0.296522 0.434171 0.434171C0.296522 0.57182 0.187333 0.735234 0.112837 0.915081C0.0383423 1.09493 -2.90074e-09 1.28769 0 1.48235V1.48235ZM0 9C-2.90074e-09 9.19467 0.0383423 9.38743 0.112837 9.56727C0.187333 9.74712 0.296522 9.91053 0.434171 10.0482C0.57182 10.1858 0.735234 10.295 0.915081 10.3695C1.09493 10.444 1.28769 10.4824 1.48235 10.4824C1.67702 10.4824 1.86978 10.444 2.04962 10.3695C2.22947 10.295 2.39289 10.1858 2.53053 10.0482C2.66818 9.91053 2.77737 9.74712 2.85187 9.56727C2.92636 9.38743 2.96471 9.19467 2.96471 9C2.96471 8.80533 2.92636 8.61258 2.85187 8.43273C2.77737 8.25288 2.66818 8.08947 2.53053 7.95182C2.39289 7.81417 2.22947 7.70498 2.04962 7.63048C1.86978 7.55599 1.67702 7.51765 1.48235 7.51765C1.28769 7.51765 1.09493 7.55599 0.915081 7.63048C0.735234 7.70498 0.57182 7.81417 0.434171 7.95182C0.296522 8.08947 0.187333 8.25288 0.112837 8.43273C0.0383423 8.61258 -2.90074e-09 8.80533 0 9V9ZM0 16.5176C-2.90074e-09 16.7123 0.0383423 16.9051 0.112837 17.0849C0.187333 17.2648 0.296522 17.4282 0.434171 17.5658C0.57182 17.7035 0.735234 17.8127 0.915081 17.8872C1.09493 17.9617 1.28769 18 1.48235 18C1.67702 18 1.86978 17.9617 2.04962 17.8872C2.22947 17.8127 2.39289 17.7035 2.53053 17.5658C2.66818 17.4282 2.77737 17.2648 2.85187 17.0849C2.92636 16.9051 2.96471 16.7123 2.96471 16.5176C2.96471 16.323 2.92636 16.1302 2.85187 15.9504C2.77737 15.7705 2.66818 15.6071 2.53053 15.4695C2.39289 15.3318 2.22947 15.2226 2.04962 15.1481C1.86978 15.0736 1.67702 15.0353 1.48235 15.0353C1.28769 15.0353 1.09493 15.0736 0.915081 15.1481C0.735234 15.2226 0.57182 15.3318 0.434171 15.4695C0.296522 15.6071 0.187333 15.7705 0.112837 15.9504C0.0383423 16.1302 -2.90074e-09 16.323 0 16.5176V16.5176Z" fill="white"/>
+                                </svg>
+                            </span> Lister les Indicateurs
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
-<%--<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/authentification/accueil" style="color: chartreuse">Permis Piste</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="/authentification/accueil"> <span class="glyphicon glyphicon-home"></span> Accueil</a></li>
-            <c:if test="${sessionScope.id == null }">
-            <li class="dropdown">
-                <a class="nav navbar-nav navbar-right" href="/authentification/accueil">
-                    <span class="glyphicon glyphicon-user"></span>
-                    Se Connecter
-                    <span class="caret"></span>
-                </a>
-                </c:if>
-            </li>
-            <c:if test="${sessionScope.id > 0  }">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-oil"></span>
-                        Missions
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/mission/ajoutMissionAdmin"> <span class="glyphicon glyphicon-plus"></span> Ajouter une mission</a>
-                        </li>
-                        <li><a href="/mission/getAllMissionAdmin"><span class="glyphicon glyphicon-th-list"></span> Lister
-                            les missions</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-user"></span>
-                        Apprenants
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/apprenant/ajouterApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter un apprenant</a>
-                        </li>
-                        <li><a href="/apprenant/getAllApprenantAdmin"><span class="glyphicon glyphicon-th-list"></span> Lister
-                            les apprenants</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-leaf"></span>
-                        Actions
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/apprenant/ajouterApprenant"> <span class="glyphicon glyphicon-plus"></span> Ajouter une action</a>
-                        </li>
-                        <li><a href="/action/getAllActionsAdmin"><span class="glyphicon glyphicon-th-list"></span> Lister
-                            les actions</a>
-                        </li>
-                    </ul>
-                </li>
-
-
-            <form method="post" action="/apprenant/getApprenantByName" onsubmit="return teste()">
-
-                <div class="nav navbar-nav">
-                    <INPUT type="text" name="nom" value="" id="nom" class="form-control" min="0">
-                    <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-ok"></span>
-                        Rechercher
-                    </button>
-                </div></form>
-
-
-                <li><a href="/authentification/logout"><span class="glyphicon glyphicon-log-out"></span> Quitter</a>
-                </li>
-            </c:if>
-            <c:if test="${sessionScope.role.equals('apprenant')}">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span class="glyphicon glyphicon-user"></span>
-                        TA MERE
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/adherent/ajout"> <span class="glyphicon glyphicon-plus"></span> TA RACE</a>
-                        </li>
-                        <li><a href="/adherent/getAdherents"><span class="glyphicon glyphicon-th-list"></span> TES UN APPRENANT</a>
-                        </li>
-                    </ul>
-                </li>
-            </c:if>
-
-        </ul>
-    </div>
-</nav>--%>
