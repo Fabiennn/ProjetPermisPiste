@@ -3,51 +3,33 @@
 
 <%@include file="header.jsp" %>
 <body>
+<link rel="stylesheet" href="<c:url value="/css/ajouterApprenant.css"/>">
 <%@include file="navigation.jsp" %>
-<div class="jumbotron text-center">
-    <h1>Listing des Actions</h1>
-</div>
-
-<div class="container">
-    <c:if test="${not empty alerte}">
-        <script>alert("Nom de mission déjà prit !");
-        </script>
-    </c:if>
-    <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span
-            class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
-    <div class="container">
-        <form method="post" action="modifier">
-            <div class="col-md-12 well well-md">
-                <center><h1>Modifier une Action</h1></center>
-                <input type="hidden" name="id" class="form-control" value="${monAction.id}"/>
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Formulation : </label>
-                        <div class="col-md-6  col-md-3">
-                            <input type="text" name="wording" class="form-control" value="${monAction.wording}"
-                                   required autofocus/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Score Minimum : </label>
-                        <div class="col-md-6 col-md-3">
-                            <input type="text" name="scoreMinimum" ng-model="pwd" class="form-control"
-                                   value="${monAction.scoreMinimum}" required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                            <button type="submit" class="btn btn-default btn-primary"><span
-                                    class="glyphicon glyphicon-log-in"></span> Valider modification
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<main>
+    <h1>${title}</h1>
+    <form method="post">
+        <div class="container-primary">
+            <c:if test="${not empty alerte}">
+                <p class="text-danger">Nom de mission déjà pris !</p>
+            </c:if>
+            <input type="hidden" name="id" class="form-control" value="${monAction.id}"/>
+            <div class="input-field">
+                <label for="iden"><span class="animated-label non-empty">Formulation</span>&nbsp</label>
+                <input type="text" id="iden" value="${monAction.wording}" name="wording" class="form-control"
+                       required autofocus/>
             </div>
-        </form>
-    </div>
-</div>
+            <div class="input-field">
+                <label for="name"><span class="animated-label non-empty">Score Minimum</span>&nbsp</label>
+                <input type="text" id="name" name="scoreMinimum" ng-model="pwd" class="form-control" value="${monAction.scoreMinimum}" required/>
+            </div>
+        </div>
+        <button type="submit" class="btn-primary">
+            Valider modification
+        </button>
+    </form>
+</main>
 <%@include file="footer.jsp" %>
+<script src="<c:url value="/js/inputAnimatedLabel.js"/>"></script>
 </body>
 
 </html>

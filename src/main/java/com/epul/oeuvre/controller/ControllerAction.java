@@ -4,6 +4,7 @@ package com.epul.oeuvre.controller;
 import com.epul.oeuvre.domains.ActionEntity;
 import com.epul.oeuvre.domains.ActionMissionEntity;
 import com.epul.oeuvre.domains.MissionEntity;
+import com.epul.oeuvre.repositories.ActionRepository;
 import com.epul.oeuvre.service.ActionService;
 import com.epul.oeuvre.service.MissionService;
 import org.dom4j.rule.Mode;
@@ -26,15 +27,16 @@ public class ControllerAction {
     private ActionService actionService;
 
     @Autowired
+    private ActionRepository actionRepository;
+
+    @Autowired
     private MissionService missionService;
 
     @RequestMapping("/getAllActionsAdmin")
     public ModelAndView pageActions(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
         List<ActionEntity> actionEntityList = this.actionService.getAllActions();
         request.setAttribute("mesActions", actionEntityList);
-
-
+        request.setAttribute("title", "Liste des actions");
         return new ModelAndView("vues/listerActions");
     }
 
@@ -48,8 +50,6 @@ public class ControllerAction {
 
     @GetMapping("/ajouterMissionAAction/{id}")
     public ModelAndView pageAjouterMissions(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-
         ActionEntity actionEntity = this.actionService.findById(id);
         List<ActionMissionEntity> actionMissionEntities = this.missionService.getByFkAction(Math.toIntExact(actionEntity.getId()));
         List<MissionEntity> missionEntities = this.missionService.getToutesLesMissions();
@@ -57,19 +57,38 @@ public class ControllerAction {
         for (ActionMissionEntity actionMissionEntity : actionMissionEntities) {
             missionEntities.remove(actionMissionEntity.getMissionByFkMission());
         }
-
-
         request.setAttribute("action", actionEntity);
         request.setAttribute("allMissions", missionEntities);
         return new ModelAndView("vues/ajouterMissionAction");
-
     }
+
+    @RequestMapping(method = RequestMethod.GET, value="/ajouterAction")
+    public ModelAndView pageAjouterAction(HttpServletRequest request, HttpServletResponse response){
+        request.setAttribute("title", "Ajouter une action");
+        return new ModelAndView("vues/modifierAction");
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value="/ajouterAction")
+    public ModelAndView pageAjouterActionPOST(HttpServletRequest request, HttpServletResponse response){
+        ActionEntity actionEntity = new ActionEntity();
+        if (this.actionService.findByWording(request.getParameter("wording")) == null) {
+            actionEntity.setWording(request.getParameter("wording"));
+            actionEntity.setScoreMinimum(Integer.valueOf(request.getParameter("scoreMinimum")));
+            actionRepository.save(actionEntity);
+        } else {
+            request.setAttribute("alerte", "Nom d'action' déjà prit");
+            request.setAttribute("monAction", actionEntity);
+            return this.pageAjouterAction(request, response);
+        }
+        return new ModelAndView("redirect:/action/getAllActionsAdmin");
+    }
+
     @GetMapping("/supprimerAction/{id}")
     public ModelAndView supprimerAction(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         this.actionService.supprimer(id);
 
-        return this.pageActions(request,response);
+        return new ModelAndView("redirect:/action/getAllActionsAdmin");
     }
 
     @GetMapping("/modifierAction/{id}")
@@ -77,7 +96,24 @@ public class ControllerAction {
                                             HttpServletResponse response) throws Exception {
         ActionEntity actionEntity = this.actionService.findById(id);
         request.setAttribute("monAction", actionEntity);
+        request.setAttribute("title", "Modifier une action");
         return new ModelAndView("vues/modifierAction");
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/modifierAction/{id}")
+    public ModelAndView modifierAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        request.setAttribute("alerte", "");
+        ActionEntity actionEntity = this.actionService.findById(Long.valueOf(request.getParameter("id")));
+        if (actionEntity.getWording().equals(request.getParameter("wording")) || this.actionService.findByWording(request.getParameter("wording")) == null) {
+            actionEntity.setWording(request.getParameter("wording"));
+            actionEntity.setScoreMinimum(Integer.valueOf(request.getParameter("scoreMinimum")));
+            this.actionService.modifier(actionEntity);
+        } else {
+            request.setAttribute("alerte", "Nom d'action' déjà prit");
+            return this.pageModifierAction(Long.valueOf(request.getParameter("id")), request, response);
+        }
+        return new ModelAndView("redirect:/action/getAllActionsAdmin");
+
     }
 
     @GetMapping("/supprimerMissionAction/{id}/{idAction}")
@@ -103,31 +139,16 @@ public class ControllerAction {
         return new ModelAndView("/vues/listerMissionsParAction");
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/modifierAction/modifier")
-    public ModelAndView modifierMission(HttpServletRequest request,
-                                        HttpServletResponse response) throws Exception {
-        request.setAttribute("alerte", "");
-
-        ActionEntity actionEntity = this.actionService.findById(Long.valueOf(request.getParameter("id")));
-        if (actionEntity.getWording().equals(request.getParameter("wording")) || this.actionService.findByWording(request.getParameter("wording")) == null) {
-            actionEntity.setWording(request.getParameter("wording"));
-            actionEntity.setScoreMinimum(Integer.valueOf(request.getParameter("scoreMinimum")));
-            this.actionService.modifier(actionEntity);
-        } else {
-            request.setAttribute("alerte", "Nom d'action' déjà prit");
-            return this.pageModifierAction(Long.valueOf(request.getParameter("id")), request, response);
-        }
-
-        return this.pageActions(request, response);
-
-    }
 
     @GetMapping("/getAction/{id}")
     public ModelAndView getAction(@PathVariable(value = "id") Long id, HttpServletRequest request,
                                              HttpServletResponse response) throws Exception {
         ActionEntity actionEntity = this.actionService.findById(id);
-        request.setAttribute("monAction", actionEntity);
-        return new ModelAndView("vues/consulterAction");
+        List<ActionEntity> actionEntityList = new ArrayList<>();
+        actionEntityList.add(actionEntity);
+        request.setAttribute("title", "Afficher une action");
+        request.setAttribute("mesActions", actionEntityList);
+        return new ModelAndView("vues/listerActions");
     }
 
 

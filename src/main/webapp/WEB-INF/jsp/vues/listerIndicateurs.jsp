@@ -3,44 +3,34 @@
 
 <%@include file="header.jsp" %>
 <body>
+<link rel="stylesheet"  type="text/css" href="<c:url value="/css/listerMissionParApprenant.css"/>">
+<link rel="stylesheet"  type="text/css" href="<c:url value="/css/listerIndicateur.css"/>">
 <%@include file="navigation.jsp"%>
 
 <main>
-    <div class="jumbotron text-center">
-        <h1>Listing des Apprenants</h1>
-    </div>
+    <h1>Liste des indicateurs</h1>
+    <div class="missions-listing">
+        <c:forEach items="${mesIndicateurs}" var="indicateur">
+            <div class="mission-container">
+                <div class="mission-grid mission-grid-body">
+                    <p>#${indicateur.id}</p>
+                    <p class="detail">${indicateur.wording}</p>
+                    <p>Coché : <span class="detail">${indicateur.valueIfCheck}</span></p>
+                    <p>Non Coché : <span class="detail">${indicateur.valueIfUnCheck}</span></p>
+                    <a href="/action/getAction/${indicateur.id}">
+                       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12.5" cy="12.5" r="12.5" fill="#00ADEF"/>
+                            <path d="M21.8698 11.962C22.3438 12.582 22.3438 13.419 21.8698 14.038C20.3768 15.987 16.7948 20 12.6128 20C8.4308 20 4.8488 15.987 3.3558 14.038C3.12519 13.7411 3 13.3759 3 13C3 12.6241 3.12519 12.2589 3.3558 11.962C4.8488 10.013 8.4308 6 12.6128 6C16.7948 6 20.3768 10.013 21.8698 11.962Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.6128 16C14.2697 16 15.6128 14.6569 15.6128 13C15.6128 11.3431 14.2697 10 12.6128 10C10.956 10 9.6128 11.3431 9.6128 13C9.6128 14.6569 10.956 16 12.6128 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                       </svg>
+                    </a>
+                </div>
+            </div>
+        </c:forEach>
 
-    <div class="container">
-        <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
-        <h2>Tableau des Apprenants</h2>
-        <div class="container">
-            <h3>Liste des Apprenants</h3>
-            <table class="table table-hover">
-                <tr>
-                    <th class="col-md-1">Numero</th>
-                    <th class="col-md-2">Formulation</th>
-                    <th class="col-md-3">Valeur si coché</th>
-                    <th class="col-md-4">Valeur si non coché</th>
-                    <th class="col-md-5">Voir action lié</th>
-                </tr>
-
-                <c:forEach items="${mesIndicateurs}" var="item">
-                    <tr>
-                        <td>${item.id}</td>
-                        <td>${item.wording}</td>
-                        <td>${item.valueIfCheck}</td>
-                        <td>${item.valueIfUnCheck}</td>
-                        <td><a class="btn btn-info" href="/action/getAction/${item.id}" role="button"><span
-                                class="glyphicon glyphicon-share-alt"></span> Consulter l'action lié</a>
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </div>
     </div>
-    <%@include file="footer.jsp"%>
 </main>
-
+<script src="<c:url value="/js/listerMissionParApprenant.js"/>"></script>
+<%@include file="footer.jsp"%>
 </body>
-
 </html>

@@ -1,12 +1,24 @@
+main{
+    overflow: auto;
+}
+
+.detail{
+    font-weight: bold;
+}
+
 .mission-container{
     margin-right: 0;
 }
 
 .mission-grid{
-    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 2fr 3fr 1fr;
     padding: 25px;
     column-gap: 5px;
     align-items: center;
+}
+
+.mission-grid::after{
+    display: none!important;
 }
 
 .action-grid{
@@ -21,5 +33,5 @@
 
 .btn-primary{
     align-self: start;
-    margin-top: 30px;
+    margin-top: 20px;
 }

@@ -28,10 +28,11 @@ public class ActionService implements IActionService {
         return this.actionRepository.findAll();
     }
 
+
     @Override
     public void supprimer(Long id) {
         ActionEntity actionEntity = this.actionRepository.findById(id);
-        if (actionEntity.getFkAction() != 20) {
+        if (actionEntity.getFkAction() == null || actionEntity.getFkAction() != 20) {
             actionEntity.setFkAction(20);
         }
 

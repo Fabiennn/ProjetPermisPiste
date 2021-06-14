@@ -27,6 +27,8 @@ input[type=text], input[type=password]{
     font-weight: bold;
     font-size: 14px;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 label{

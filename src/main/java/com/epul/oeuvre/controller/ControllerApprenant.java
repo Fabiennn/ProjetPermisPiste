@@ -46,9 +46,8 @@ public class ControllerApprenant {
     @GetMapping("/supprimerApprenant/{id}")
     public ModelAndView supprimerAdherent(@PathVariable(value = "id") Long id, HttpServletRequest request,
                                              HttpServletResponse response) throws Exception {
-
         this.apprenantService.supprimer(id);
-        return this.pageApprenants(request, response);
+        return new ModelAndView("redirect:/apprenant/getAllApprenantAdmin");
 
     }
 
