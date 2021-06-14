@@ -34,7 +34,7 @@
                     <td>${monApprenant.surname}</td>
                     <td>${monApprenant.forname}</td>
                     <td>${monApprenant.email}</td>
-                    <td><a class="btn btn-info" href="/mission/consulterMissionApprenant/${item.id}" role="button"><span
+                    <td><a class="btn btn-info" href="/mission/consulterMissionApprenant/${monApprenant.id}" role="button"><span
                             class="glyphicon glyphicon-briefcase"></span> Missions</a></td>
                         <c:if test="${sessionScope.role.equals('admin')}">
                         <td><a class="btn btn-info" href="/apprenant/modifierApprenant/${item.id}" role="button"><span

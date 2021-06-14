@@ -1,0 +1,152 @@
+.missions-listing{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+
+.mission-container{
+    border: 1px solid #C6C6C6;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.mission-container{
+    margin-top: 15px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission-grid{
+    display: grid;
+    grid-template-columns: 1fr 4fr 0.5fr;
+    position: relative;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 14px;
+    padding: 25px 25px 35px;
+}
+
+.mission-grid.next-mission-grid{
+    padding: 20px;
+    align-items: center;
+}
+
+.mission-grid-header{
+    display: none;
+}
+
+.mission-grid:not(.next-mission-grid)::after{
+    display: inline-block;
+    content: '>';
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.375);
+}
+
+.mission-grid:hover, .mission-container.active .mission-grid{
+    background-color: #f2f2f2;
+}
+
+.mission-container.active .mission-grid::after{
+    transform: rotateZ(90deg);
+}
+
+.mission-wording{
+    font-weight: bold;
+}
+
+.mission-action{
+    display: none;
+}
+
+.mission-date{
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    font-size: 12px;
+    color: #5a5a5a;
+
+}
+
+.mission-state{
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    font-size: 12px;
+}
+
+.action-container-wrapper{
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.6s;
+}
+
+.action-container{
+    font-size: 11px;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.action-grid{
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr 3fr;
+    column-gap: 10px;
+}
+
+.action-grid:not(:first-child){
+    margin-top: 10px;
+}
+
+
+.action-grid-header{
+    font-weight: bold;
+}
+
+.next-missions{
+    margin-top: 30px;
+}
+
+.form-group{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-svg{
+    justify-self: start;
+}
+
+.btn-add-mission svg{
+    transform: rotateZ(45deg);
+}
+
+.btn-add-mission:hover path{
+    fille: white;
+}
+
+.add-mission-grid{
+    border-color: var(--primary);
+}
+
+.mission-select{
+    border: 0;
+    font-size: 14px;
+    background: none;
+    width: 100%;
+    border-bottom: 1px solid #252539;
+    margin-right: 10px;
+    outline: none!important;
+}
+
+.mission-select-wrapper{
+    padding-right: 10px;
+}
+
+@media (min-width: 900px) {
+    .mission-container{
+        margin-left: initial;
+    }
+}

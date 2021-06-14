@@ -10,9 +10,9 @@ public interface InscriptionRepository extends JpaRepository<InscriptionEntity, 
 
     public List<InscriptionEntity> findByFkLearner(int fkLearner);
 
-    @Query("SELECT u FROM InscriptionEntity u WHERE u.fkLearner = ?1 and u.date is NULL")
+    @Query("SELECT u FROM InscriptionEntity u WHERE u.fkLearner = ?1 and u.date is not null")
     public List<InscriptionEntity> getPreviousInscriptionsOfLearner(int id);
 
-    @Query("SELECT u FROM InscriptionEntity u WHERE u.fkLearner = ?1 and u.date is not NULL")
+    @Query("SELECT u FROM InscriptionEntity u WHERE u.fkLearner = ?1 and u.date is null")
     public List<InscriptionEntity> getNextInscriptionsOfLearner(int id);
 }

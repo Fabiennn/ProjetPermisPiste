@@ -2,9 +2,7 @@ package com.epul.oeuvre.controller;
 
 import com.epul.oeuvre.domains.*;
 import com.epul.oeuvre.mesExceptions.MonException;
-import com.epul.oeuvre.repositories.ApprenantRepository;
-import com.epul.oeuvre.repositories.InscriptionActionRepository;
-import com.epul.oeuvre.repositories.InscriptionRepository;
+import com.epul.oeuvre.repositories.*;
 import com.epul.oeuvre.service.MissionService;
 import com.epul.oeuvre.utilitaires.FonctionsUtiles;
 import org.apache.coyote.Request;
@@ -37,13 +35,20 @@ public class ControllerMission {
     @Autowired
     private InscriptionActionRepository inscriptionActionRepository;
 
-    @RequestMapping("/getAllMissionAdmin")
-    public ModelAndView pageMissions(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    @Autowired
+    private ActionRepository actionRepository;
+
+    @Autowired
+    private ActionMissionRepository actionMissionRepository;
+
+    @RequestMapping(method = RequestMethod.GET, value = "/getAllMissionAdmin")
+    public ModelAndView pageMissionsGET(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String destinationPage = "";
         List<MissionEntity> mesMissions = null;
         try {
             mesMissions= missionService.getToutesLesMissions();
-            request.setAttribute("mesMissions", mesMissions);
+            request.setAttribute("missions", mesMissions);
+            request.setAttribute("allActions", actionRepository.findAll());
             destinationPage = "vues/listerMissions";
         }  catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
@@ -56,22 +61,43 @@ public class ControllerMission {
         return new ModelAndView(destinationPage);
     }
 
-    @RequestMapping("/ajoutMissionAdmin")
-    public ModelAndView pageAjout(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        return new ModelAndView("vues/ajouterMission");
-
+    @RequestMapping(method = RequestMethod.POST, value = "/getAllMissionAdmin")
+    public ModelAndView pageMissionsPOST(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        if(request.getParameter("addAction") != null){
+            int missionId = Integer.parseInt(request.getParameter("addAction"));
+            int actionId = Integer.parseInt(request.getParameter("idAction"));
+            ActionMissionEntity actionMission = new ActionMissionEntity();
+            actionMission.setFkMission(missionId);
+            actionMission.setFkAction(actionId);
+            try {
+                actionMissionRepository.save(actionMission);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else if(request.getParameter("updateId") != null) {
+            int missionId = Integer.parseInt(request.getParameter("updateId"));
+            MissionEntity missionEntity = missionService.findById(Long.valueOf(missionId));
+            String wording = missionEntity.getWording() != null ? missionEntity.getWording() : "" ;
+            if (wording.equals(request.getParameter("wording")) || missionService.getByWording(request.getParameter("wording")) == null) {
+                missionEntity.setWording(request.getParameter("wording"));
+                missionService.modifier(missionEntity);
+            } else {
+                request.setAttribute("updateError", "Nom de mission déjà prit");
+                return this.pageMissionsGET(request, response);
+            }
+        }
+        return new ModelAndView("redirect:/mission/getAllMissionAdmin");
     }
 
     @RequestMapping("/ajouterUneMission")
     public ModelAndView ajouterMission(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        request.setAttribute("alerte", "");
         String destinationPage = "";
         try {
             MissionEntity missionEntity = new MissionEntity();
             if (this.missionService.getByWording(request.getParameter("wording")) != null) {
-                request.setAttribute("alerte", "Deja prit");
-                return this.pageAjout(request, response);
+                request.setAttribute("addError", "Nom de mission déjà pris");
+                return this.pageMissionsGET(request, response);
             }
             missionEntity.setWording(request.getParameter("wording"));
             this.missionService.inserer(missionEntity);
@@ -79,8 +105,8 @@ public class ControllerMission {
             request.setAttribute("MesErreurs", e.getMessage());
             destinationPage = "/vues/Erreur";
         }
-        destinationPage = "/vues/listerMissions";
-        return this.pageMissions(request, response);
+        destinationPage = "redirect:/mission/getAllMissionAdmin";
+        return new ModelAndView(destinationPage);
     }
 
     @RequestMapping(method= RequestMethod.POST, value="/inscrireMissionApprenant")
@@ -94,50 +120,34 @@ public class ControllerMission {
         return new ModelAndView("redirect:/mission/consulterMissionApprenant/"+idLearner);
     }
 
-    @RequestMapping("/consulterMissionApprenant/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/consulterMissionApprenant/{id}")
     public ModelAndView getMissionParApprenant(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
         /*List<MissionEntity> missionEntities = this.missionService.getMissionParApprenant(id);
         request.setAttribute("mesMissions", missionEntities);*/
         LearnerEntity learner = apprenantRepository.getOne(id);
         request.setAttribute("apprenant", learner);
         List<InscriptionEntity> inscriptionMade = inscriptionRepository.getPreviousInscriptionsOfLearner(id.intValue());
-        request.setAttribute("mesInscription", inscriptionMade);
+        request.setAttribute("mesInscriptions", inscriptionMade);
         List<InscriptionEntity> inscriptionNotMade = inscriptionRepository.getNextInscriptionsOfLearner(id.intValue());
         request.setAttribute("mesMissionNonEffectues", inscriptionNotMade);
-        request.setAttribute("allMissions", missionService.getToutesLesMissions());
+        HttpSession session = request.getSession();
+        if(session.getAttribute("role").equals("admin"))
+            request.setAttribute("allMissions", missionService.getToutesLesMissions());
         return new ModelAndView("/vues/listerMissionParApprenant");
+    }
 
+    @RequestMapping(method = RequestMethod.POST, value="consulterMissionApprenant/{id}")
+    public ModelAndView supprimerInscription(@PathVariable(value = "id")Long id, HttpServletRequest request, HttpServletResponse response){
+        inscriptionRepository.deleteById(Long.valueOf(request.getParameter("deleteId")));
+        return new ModelAndView("redirect:/mission/consulterMissionApprenant/{id}");
     }
 
     @RequestMapping("/supprimerMission/{id}")
     public ModelAndView supprimerMission(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
         this.missionService.supprimer(this.missionService.findById(id));
-        return this.pageMissions(request, response);
+        return new ModelAndView("redirect:/mission/getAllMissionAdmin");
     }
 
-    @GetMapping("/modifierMission/{id}")
-    public ModelAndView pageModifierMission(@PathVariable(value = "id") Long id, HttpServletRequest request,
-                                             HttpServletResponse response) throws Exception {
-        MissionEntity missionEntity = this.missionService.findById(id);
-        request.setAttribute("maMission", missionEntity);
-        return new ModelAndView("vues/modifierMission");
-    }
-
-    @RequestMapping(method = RequestMethod.POST, value = "/modifierMission/modifier")
-    public ModelAndView modifierMission(HttpServletRequest request,
-                                          HttpServletResponse response) throws Exception {
-
-        request.setAttribute("alerte", "");
-        MissionEntity missionEntity = missionService.findById(Long.valueOf(request.getParameter("id")));
-        if (missionEntity.getWording().equals(request.getParameter("wording")) || missionService.getByWording(request.getParameter("wording")) == null) {
-            missionEntity.setWording(request.getParameter("wording"));
-            missionService.modifier(missionEntity);
-        } else {
-            request.setAttribute("alerte", "Nom de mission déjà prit");
-            return this.pageModifierMission(Long.valueOf(request.getParameter("id")), request, response);
-        }
-        return this.pageMissions(request, response);
-    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/mesMissions")
     public ModelAndView pageConsulterMesMissions(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -148,8 +158,7 @@ public class ControllerMission {
     @RequestMapping(method = RequestMethod.GET, value = "/mesMissions/{id}/commencer")
     public ModelAndView pageCommencerMission(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response){
         InscriptionEntity inscriptionEntity = inscriptionRepository.getOne(id);
-        MissionEntity missionEntity = this.missionService.findById(id);
-        request.setAttribute("mission", missionEntity);
+        request.setAttribute("mission", inscriptionEntity.getMissionByFkMission());
         request.setAttribute("inscription", inscriptionEntity);
         return new ModelAndView("vues/commencerMission");
     }
@@ -180,7 +189,10 @@ public class ControllerMission {
     public ModelAndView pageResultatMission(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response){
         InscriptionEntity inscriptionEntity = inscriptionRepository.getOne(id);
         request.setAttribute("inscription", inscriptionEntity);
-        request.setAttribute("actions", inscriptionEntity.getInscriptionActionsById());
+        List <InscriptionActionEntity> inscriptionActionEntities = (List<InscriptionActionEntity>) inscriptionEntity.getInscriptionActionsById();
+        request.setAttribute("actions",inscriptionActionEntities);
+        int nbSuccess = (int) inscriptionActionEntities.stream().filter(inscriptionActionEntity -> inscriptionActionEntity.getSort() == 1).count();
+        request.setAttribute("nbActionSuccess", nbSuccess);
         return new ModelAndView("vues/resultatMission");
     }
 

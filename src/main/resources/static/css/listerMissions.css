@@ -1,0 +1,79 @@
+main{
+    overflow: auto;
+}
+
+h3{
+    margin: 10px 10px 5px;
+}
+
+.mission-grid{
+    grid-template-columns: 1fr 4fr 0.5fr 0.5fr;
+    padding: 25px;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.action-grid{
+    grid-template-columns: 1fr 5fr 2fr 3fr 1fr;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+    margin: 0 -15px!important;
+    padding: 5px 15px;
+}
+
+.mission-grid:not(.next-mission-grid)::after {
+    right: 15px;
+}
+
+.action-grid:not(.action-grid-header):hover{
+    background-color: #e5e5e5;
+}
+
+.action-add-grid{
+    display: grid;
+    grid-template-columns: 1fr 10fr 0fr 1fr;
+    column-gap: 10px;
+}
+
+.new-mission{
+    margin-top: 30px;
+}
+
+.new-mission-container .mission-grid::after{
+    display: none;
+}
+
+input[type=text]{
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: var(--primary);
+    outline: none!important;
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+label{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 5px;
+}
+
+.animated-label{
+    display: block;
+    transition: all 0.5s;
+}
+
+.input-field:focus-within .animated-label, .non-empty{
+    transform: translateY(-17px)!important;
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}

@@ -17,7 +17,8 @@
     justify-content: space-between;
     padding: 5px 20px;
     box-shadow: 5px 5px 15px grey;
-    border-radius: 0 0 8px 8px
+    position: relative;
+    z-index: 1;
 }
 
 .nav-btn{
@@ -100,6 +101,14 @@
     right: 15px;
 }
 
+.logout-link path {
+    transition: fill 0.2s;
+}
+
+.logout-link:hover path{
+    fill: var(--primary);
+}
+
 .identity-sub{
     display: flex;
     flex-direction: column;
@@ -130,6 +139,7 @@
     width: 100%;
     transition: background-color 0.1s;
     align-items: center;
+    cursor: pointer;
 }
 
 .nav-link:hover, .nav-link.active{
@@ -170,6 +180,7 @@
     border-bottom: 1px solid #00ADEF;
     outline: none!important;
     padding-bottom: 0;
+    color: white;
 }
 
 .search-bar:focus-within{
@@ -180,6 +191,15 @@
     background-color: transparent;
     border: none;
     outline: none!important;
+    cursor: pointer;
+}
+
+.search-btn path {
+    transition: fill 0.2s;
+}
+
+.search-btn:hover path{
+    fill: white;
 }
 
 
