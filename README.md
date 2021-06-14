@@ -11,10 +11,15 @@ BASE DE DONNEES:
 APPLICATION :
 
 Compte admin :
+
   identifiant : doe
+  
   Mot de passe : secret
 
 Compre Apprenant :
+
   identifiant : felix
+  
   Mot de passe : secret
 
+Bonne vacances !
