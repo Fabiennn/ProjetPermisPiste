@@ -4,9 +4,11 @@ package com.epul.oeuvre.service;
 import com.epul.oeuvre.domains.ActionEntity;
 import com.epul.oeuvre.domains.ActionMissionEntity;
 import com.epul.oeuvre.domains.IndicatorEntity;
+import com.epul.oeuvre.domains.InscriptionActionEntity;
 import com.epul.oeuvre.repositories.ActionMissionRepository;
 import com.epul.oeuvre.repositories.ActionRepository;
 import com.epul.oeuvre.repositories.IndicatorRepository;
+import com.epul.oeuvre.repositories.InscriptionActionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,9 @@ public class ActionService implements IActionService {
     @Autowired
     private IndicatorRepository indicatorRepository;
 
+    @Autowired
+    private InscriptionActionRepository inscriptionActionRepository;
+
     public List<ActionEntity> getAllActions() {
         return this.actionRepository.findAll();
     }
@@ -33,12 +38,12 @@ public class ActionService implements IActionService {
     public void supprimer(Long id) {
         ActionEntity actionEntity = this.actionRepository.findById(id);
         if (actionEntity.getFkAction() == null || actionEntity.getFkAction() != 20) {
-            actionEntity.setFkAction(20);
+            actionEntity.setFkAction(null);
         }
 
         List<ActionEntity> actionEntityList = this.actionRepository.findByFkAction(Math.toIntExact(actionEntity.getId()));
         for (ActionEntity actionEntity1: actionEntityList) {
-            actionEntity1.setFkAction(20);
+            actionEntity1.setFkAction(null);
             this.actionRepository.save(actionEntity1);
         }
         List<ActionMissionEntity> actionMissionEntities = this.actionMissionRepository.findByFkAction(Math.toIntExact(actionEntity.getId()));
@@ -50,6 +55,12 @@ public class ActionService implements IActionService {
         List<IndicatorEntity> indicatorEntities = this.indicatorRepository.findByFkAction(Math.toIntExact(actionEntity.getId()));
         for (IndicatorEntity indicatorEntity : indicatorEntities) {
             this.indicatorRepository.delete(indicatorEntity);
+        }
+
+        List<InscriptionActionEntity> inscriptionActionEntities = (List<InscriptionActionEntity>) actionEntity.getInscriptionActionsById();
+        for(InscriptionActionEntity inscriptionActionEntity : inscriptionActionEntities){
+            inscriptionActionEntity.setFkAction(20);
+            inscriptionActionRepository.save(inscriptionActionEntity);
         }
 
         this.actionRepository.delete(actionEntity);
