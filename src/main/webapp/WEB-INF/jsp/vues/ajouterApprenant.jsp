@@ -2,76 +2,41 @@
          pageEncoding="UTF-8" %>
 <%@include file="header.jsp" %>
 <body>
+<link rel="stylesheet" href="<c:url value="/css/ajouterApprenant.css"/>">
 <%@include file="navigation.jsp" %>
 <main>
-<div class="jumbotron text-center">
-    <H1> Ajout d'un apprenant </H1>
-</div>
-<div class="container">
-    <div class="container">
-        <form method="post" action="ajouter">
-            <div class="col-md-35 well well-md">
-                <c:if test="${not empty alerte}">
-                <script>alert("Un apprenant a déjà ce nom !");
-                </script>
-                </c:if>
-                <div class="col-md-18 well well-md">
-                    <h1>Ajouter l'apprenant que vous voulez</h1>
-                    <div class="row">
-                        <div class="col-md-12" style="border:none; background-color:transparent; height :15px;">
-                        </div>
-                    </div>
-                    <div class="form-horizontal">
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Prénom : </label>
-                        <div class="col-md-6  col-md-3">
-                            <input type="text" name="surname" class="form-control"
-                                   required autofocus/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Nom : </label>
-                        <div class="col-md-6 col-md-3">
-                            <input type="text" name="forname" ng-model="pwd" class="form-control"
-                                   required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Email : </label>
-                        <div class="col-md-6 col-md-3">
-                            <input type="text" name="email" ng-model="pwd" class="form-control"
-                                   required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Mot de passe : </label>
-                        <div class="col-md-6 col-md-3">
-                            <input type="password" name="motdepasse" ng-model="pwd" class="form-control"
-                                   required/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" style="text-align: center">
-                    <button type="submit" class="btn btn-default btn-primary"><span
-                            class="glyphicon glyphicon-ok"></span>
-                        Ajouter
-                    </button>
-
-                    <button type="button" class="btn btn-default btn-primary"
-                            onclick="{
-                            window.location = '../index.jsp';
-                        }">
-                        <span class="glyphicon glyphicon-remove"></span> Annuler
-
-                    </button>
-                </div>
-                </div>
-        </form>
+<H1> Ajout d'un apprenant </H1>
+<form method="post" action="ajouter">
+    <div class="container-primary">
+        <c:if test="${not empty alerte}">
+            <p class="text-danger">Un apprenant existe déjà à ce nom.</p>
+        </c:if>
+        <div class="input-field">
+            <label for="iden"><span class="animated-label">Identifiant</span>&nbsp</label>
+            <input type="text" id="iden" name="surname" class="form-control"
+                   required autofocus/>
+        </div>
+        <div class="input-field">
+            <label for="name"><span class="animated-label">Nom</span>&nbsp</label>
+            <input type="text" id="name" name="forname" ng-model="pwd" class="form-control" required/>
+        </div>
+        <div class="input-field">
+            <label for="email"><span class="animated-label">Email</span>&nbsp</label>
+            <input type="text" id="email" name="email" ng-model="pwd" class="form-control"
+                   required/>
+        </div>
+        <div class="input-field">
+            <label for="mdp"><span class="animated-label">Mot de passe</span>&nbsp</label>
+            <input type="password" id="mdp" name="motdepasse" ng-model="pwd" class="form-control" required/>
+        </div>
     </div>
-</div>
-<%@include file="footer.jsp" %>
+    <button type="submit" class="btn-primary">
+        Ajouter
+    </button>
+</form>
 </main>
+<%@include file="footer.jsp" %>
+<script src="<c:url value="/js/inputAnimatedLabel.js"/>"></script>
 </body>
 
 </html>

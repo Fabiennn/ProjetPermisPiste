@@ -1,0 +1,59 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.container-primary{
+    width: min(500px, 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.input-field{
+    margin: 20px;
+    width: 100%;
+}
+
+input[type=text], input[type=password]{
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: var(--primary);
+    outline: none!important;
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 100%;
+}
+
+label{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 5px;
+}
+
+.animated-label{
+    display: block;
+    transition: all 0.5s;
+}
+
+.input-field:focus-within .animated-label, .non-empty{
+    transform: translateY(-17px)!important;
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.btn-primary{
+    font-size: 20px;
+}

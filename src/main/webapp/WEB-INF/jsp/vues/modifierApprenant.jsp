@@ -3,59 +3,38 @@
 
 <%@include file="header.jsp" %>
 <body>
+<link rel="stylesheet" href="<c:url value="/css/ajouterApprenant.css"/>">
 <%@include file="navigation.jsp" %>
 <main>
-<div class="jumbotron text-center">
-    <h1>Listing des Apprenants</h1>
-</div>
-
-<div class="container">
-    <c:if test="${not empty alerte}">
-        <script>alert("Nom d'utilisateur déjà prit !");
-        </script></c:if>
-    <a class="btn btn-secondary" href="/authentification/accueil" role="button"><span
-            class="glyphicon glyphicon-menu-left"></span> Retour accueil</a>
-    <div class="container">
-        <form method="post" action="modifier">
-            <div class="col-md-12 well well-md">
-                <center><h1>Modifier un Apprenant</h1></center>
-                <input type="hidden" name="id" class="form-control" value="${monApprenant.id}"/>
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Nom : </label>
-                        <div class="col-md-6  col-md-3">
-                            <input type="text" name="surname" class="form-control" value="${monApprenant.surname}"
-                                   required autofocus/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Prénom : </label>
-                        <div class="col-md-6 col-md-3">
-                            <input type="text" name="forname" ng-model="pwd" class="form-control"
-                                   value="${monApprenant.forname}" required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">E-mail : </label>
-                        <div class="col-md-6 col-md-3">
-                            <input type="text" name="email" ng-model="pwd" class="form-control"
-                                   value="${monApprenant.email}" required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                            <button type="submit" class="btn btn-default btn-primary"><span
-                                    class="glyphicon glyphicon-log-in"></span> Valider modification
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <h1>Modifier Apprenants</h1>
+    <form method="post">
+        <input type="hidden" name="id" class="form-control" value="${monApprenant.id}"/>
+        <div class="container-primary">
+            <c:if test="${not empty alerte}">
+                <p class="text-danger">Un apprenant existe déjà à ce nom.</p>
+            </c:if>
+            <div class="input-field">
+                <label for="iden"><span class="animated-label non-empty">Identifiant</span>&nbsp</label>
+                <input type="text" id="iden" name="surname" value="${monApprenant.surname}"
+                       required autofocus/>
             </div>
-        </form>
-    </div>
-</div>
-<%@include file="footer.jsp" %>
+            <div class="input-field">
+                <label for="name"><span class="animated-label non-empty">Nom</span>&nbsp</label>
+                <input type="text" id="name" name="forname" value="${monApprenant.forname}" required/>
+            </div>
+            <div class="input-field">
+                <label for="email"><span class="animated-label non-empty">Email</span>&nbsp</label>
+                <input type="text" id="email" name="email" value="${monApprenant.email}"
+                       required/>
+            </div>
+        </div>
+        <button type="submit" class="btn-primary">
+            Valider modification
+        </button>
+    </form>
 </main>
+<%@include file="footer.jsp" %>
+<script src="<c:url value="/js/inputAnimatedLabel.js"/>"></script>
 </body>
 
 </html>

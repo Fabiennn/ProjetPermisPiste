@@ -28,6 +28,7 @@ public class ControllerApprenant {
     public ModelAndView pageApprenants(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String destinationPage = "";
         List<LearnerEntity> apprenantList = new ArrayList<>();
+        request.setAttribute("title", "Liste des Apprenants");
         try {
             apprenantList = apprenantService.getTousLesApprenants();
             request.setAttribute("mesApprenants", apprenantList);
@@ -54,15 +55,16 @@ public class ControllerApprenant {
     @RequestMapping("/getApprenantByName")
     public ModelAndView getApprenantByName(HttpServletRequest request,
                                          HttpServletResponse response) throws Exception {
-
+        List<LearnerEntity> list = new ArrayList<>();
         LearnerEntity learnerEntity = this.apprenantService.getLearnerSurname(request.getParameter("nom"));
+        list.add(learnerEntity);
+        request.setAttribute("title", "Apprenant recherché");
         if (learnerEntity != null && learnerEntity.getRole().equals("apprenant")) {
-            request.setAttribute("monApprenant", learnerEntity);
+            request.setAttribute("mesApprenants", list);
         } else {
-            request.setAttribute("alerte", "Aucun apprenant");
+            request.setAttribute("apError", "Aucun apprenant");
         }
-
-        return new ModelAndView("vues/consulterApprenant");
+        return new ModelAndView("vues/listerApprenants");
     }
 
 
@@ -74,13 +76,15 @@ public class ControllerApprenant {
         return new ModelAndView("vues/modifierApprenant");
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/modifierApprenant/modifier")
+
+    @RequestMapping(method = RequestMethod.POST, value = "/modifierApprenant/{id}")
     public ModelAndView modifierApprenant(HttpServletRequest request,
                                           HttpServletResponse response) throws Exception {
 
         request.setAttribute("alerte", "");
         LearnerEntity learnerEntity = apprenantService.getLearnerId(Long.valueOf(request.getParameter("id")));
-        if (!learnerEntity.getForname().equals(request.getParameter("surname")) && apprenantService.getLearnerSurname(request.getParameter("surname")) == null) {
+        LearnerEntity learnerTest = apprenantService.getLearnerSurname(request.getParameter("surname"));
+        if ( learnerTest == null || learnerEntity == learnerTest) {
             learnerEntity.setSurname(request.getParameter("surname"));
             learnerEntity.setForname(request.getParameter("forname"));
             learnerEntity.setEmail(request.getParameter("email"));
