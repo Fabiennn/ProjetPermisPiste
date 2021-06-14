@@ -9,17 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Verif role">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/ajouterMissionAction.jsp" afterDir="false" />
+    <list default="true" id="fd32044b-4033-4145-a31d-e20ace0c4b54" name="Default" comment="Admin finit, reste juste une page Indicator a rajouter">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/consulterAction.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerIndicateurs.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/IndicatorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/domains/IndicatorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionMissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/repositories/ActionMissionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ActionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/ActionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IActionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IActionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IMissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/IMissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/service/MissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerIndicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerIndicator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionsParAction.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/listerMissionsParAction.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/vues/navigation.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,7 +428,9 @@
       <workItem from="1622841390585" duration="761000" />
       <workItem from="1622881006037" duration="3000" />
       <workItem from="1622913563182" duration="3289000" />
-      <workItem from="1623002856204" duration="8422000" />
+      <workItem from="1623002856204" duration="9347000" />
+      <workItem from="1623589589501" duration="714000" />
+      <workItem from="1623669053892" duration="1421000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1622555598897</created>
@@ -468,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623002910330</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Admin finit, reste juste une page Indicator a rajouter">
+      <created>1623014699243</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623014699243</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +497,8 @@
     <MESSAGE value="Admin" />
     <MESSAGE value="Admin (reste seulement Indicator, et ajouter mission à action)" />
     <MESSAGE value="Verif role" />
-    <option name="LAST_COMMIT_MESSAGE" value="Verif role" />
+    <MESSAGE value="Admin finit, reste juste une page Indicator a rajouter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin finit, reste juste une page Indicator a rajouter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -502,9 +509,9 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerLogin.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/epul/oeuvre/controller/ControllerAction.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

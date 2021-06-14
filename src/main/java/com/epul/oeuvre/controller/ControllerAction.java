@@ -122,5 +122,13 @@ public class ControllerAction {
 
     }
 
+    @GetMapping("/getAction/{id}")
+    public ModelAndView getAction(@PathVariable(value = "id") Long id, HttpServletRequest request,
+                                             HttpServletResponse response) throws Exception {
+        ActionEntity actionEntity = this.actionService.findById(id);
+        request.setAttribute("monAction", actionEntity);
+        return new ModelAndView("vues/consulterAction");
+    }
+
 
 }
